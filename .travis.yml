@@ -1,0 +1,21 @@
+os: linux
+language: python
+python: 3.6
+
+env:
+  global:
+    # Doctr deploy key for slaclab/edm2pydm
+    - secure: "ramC3AJQPJeKfebAD8aip+26gDovFOv7v/460Pr/tm6Gz7cN2mZOTE7CqWKl7zC/KIS8EqLCX8aRlsN0GSinSQXirsW6iCJYAwo3LCQufBEz0Copp8FvnSzjjjdfkLeIE+Rtc2FOwx3zBtxmxnNrB+NQqhe+JeFqnR3VPlk7iDLpoiu97gP1s7YO7vc2qebpF9dNhvA6GfjthAdcrx/lBoXmE71hakxndTDtRoup1H2esO2bgmgDSx1oS+B5JJgZApjoBJ2SFyBSEgSZAWB3yMxvzvFxrX0yjqy5lrvQUyp7KaU40hLPqhQiUcydSHAfsyEsUQW34D0sV5s58QMWW7GKkC+BMUHJ1pDvqu4loPI52sbM5309X7q/iNZee9OQcLTZnpYCN41iN7fa2YJDYqZmn2oR37wR4qUXRKD8SI4QGDuDkpEIy1s2TbsBCXbpaugR3V9Mgr7szu0opDecWwMcxEAvP9vHyNvErqzrNWLNku0lQ//3CMT8TfJv649A9d7nc87/fbVTlwMwwI6Mzzj6PBK7JStL1AvGYYVxMOpJ2FLTmYz8wZOLTxXJqbzmwLAWG+XqqdEdPJAhgUQ3uge5OoMyn1xlnjJjae0LTjEoubgUDcuqi91r84ISzJqQLOtndwtTftYOKkc9a85jWpaVUvXUb9K6tME3yuNSu3E="
+
+script:
+  #Build docs
+  - set -e
+  - |
+    if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY_SLACLAB_PYDM_TUTORIAL" ]]; then
+      pip install -r docs-requirements.txt
+      pushd docs
+      make html
+      popd
+      #Publish docs.
+      doctr deploy . --built-docs docs/build/html --deploy-branch-name gh-pages
+    fi
