@@ -11,7 +11,7 @@ script:
   #Build docs
   - set -e
   - |
-    if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY_SLACLAB_PYDM_TUTORIAL" ]]; then
+    if [[ -n "$DOCTR_DEPLOY_ENCRYPTION_KEY_SLACLAB_EDM2PYDM" ]]; then
       pip install -r docs-requirements.txt
       pushd docs
       make html
