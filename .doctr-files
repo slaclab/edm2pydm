@@ -1,11 +1,15 @@
 ./_downloads/8c35a64c1b537d1093d35cb2d754cfc7/colorPV.ui
+./_downloads/bf94eba67dc19c8a1b2749bf47ff5bc4/visibilityPV.ui
 ./_downloads/d5230a901e2fc306fd2a741c5e8b44b7/colorPV.db
+./_downloads/d68fac05985512acd1128be60297cc75/visibilityPV.db
 ./_images/colorPV.gif
 ./_images/colorPV_bonus.gif
 ./_images/new_widget.gif
+./_images/visibilityPV.gif
 ./_sources/contrib/help.rst.txt
 ./_sources/contrib/requests.rst.txt
 ./_sources/how-to/colorPV.rst.txt
+./_sources/how-to/visibilityPV.rst.txt
 ./_sources/index.rst.txt
 ./_sources/learning.rst.txt
 ./_sources/motivation.rst.txt
@@ -56,7 +60,10 @@
 ./_static/how-to/colorPV/code/enum.db
 ./_static/how-to/colorPV/colorPV.gif
 ./_static/how-to/colorPV/colorPV_bonus.gif
-./_static/how-to/colorPV/new_widget.gif
+./_static/how-to/new_widget.gif
+./_static/how-to/visibilityPV/code/visibilityPV.db
+./_static/how-to/visibilityPV/code/visibilityPV.ui
+./_static/how-to/visibilityPV/visibilityPV.gif
 ./_static/jquery-3.4.1.js
 ./_static/jquery.js
 ./_static/js/modernizr.min.js
@@ -72,6 +79,7 @@
 ./contrib/requests.html
 ./genindex.html
 ./how-to/colorPV.html
+./how-to/visibilityPV.html
 ./index.html
 ./learning.html
 ./motivation.html

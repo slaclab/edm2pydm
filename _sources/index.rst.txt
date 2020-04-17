@@ -30,6 +30,7 @@ tasks, and data plugins for multiple control systems.
     :caption: How-To
 
     how-to/colorPV.rst
+    how-to/visibilityPV.rst
 
 .. toctree::
    :maxdepth: 1

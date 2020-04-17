@@ -1,0 +1,10 @@
+record(mbbi, "EDM2PYDM:VIS:CONTROL")
+{
+   field(PINI, "YES")
+   field(ZRST, "INVISIBLE")
+   field(ZRVL, "0")
+   field(ONST, "VISIBLE")
+   field(ONVL, "1")
+   field(VAL,  "1")
+}
+

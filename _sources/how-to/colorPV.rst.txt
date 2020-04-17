@@ -26,7 +26,7 @@ a line edit which uses a PV (``EDM2PYDM:NOALARM``) with no alarm information.
 
   Let's start by opening Qt Designer and creating a new ``Widget``.
 
-  .. figure:: /_static/how-to/colorPV/new_widget.gif
+  .. figure:: /_static/how-to/new_widget.gif
      :scale: 100 %
      :align: center
 
