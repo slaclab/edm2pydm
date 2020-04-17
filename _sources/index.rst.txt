@@ -1,7 +1,11 @@
 EDM to PyDM Migration Guide
 ===========================
 
-PyDM (Python Display Manager) is a new framework for building control system
+`EDM <https://controlssoftware.sns.ornl.gov/edm>`_ (Extensible Display Manager) is used at many EPICS sites to create
+reliable, fast displays. It is based on X11/Linux and provides both an editor
+for creating pages and a runtime for displaying them.
+
+`PyDM <https://github.com/slaclab/pydm>`_ (Python Display Manager) is a new framework for building control system
 graphical user interfaces using Python and Qt.
 
 It provides a system for the drag-and-drop creation of user interfaces using
@@ -12,6 +16,20 @@ behavior to complex high level applications, with the same set of widgets.
 
 Developers can extend the framework with custom widgets for site-specific
 tasks, and data plugins for multiple control systems.
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Introduction
+
+    motivation.rst
+    learning.rst
+
+.. toctree::
+    :maxdepth: 1
+    :caption: How-To
+
+    how-to/colorPV.rst
 
 .. toctree::
    :maxdepth: 1
@@ -27,3 +45,4 @@ tasks, and data plugins for multiple control systems.
 
    PyDM GitHub <https://github.com/slaclab/pydm>
    SLAC-wide GitHub <https://github.com/slaclab>
+   EDM Website <https://controlssoftware.sns.ornl.gov/edm>

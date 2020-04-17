@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>EDM to PyDM Migration Guide &mdash; EDM to PyDM Migration Guide 0.0.1 documentation</title>
+  <title>Motivation &mdash; EDM to PyDM Migration Guide 0.0.1 documentation</title>
   
 
   
@@ -35,7 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Motivation" href="motivation.html" /> 
+    <link rel="next" title="Learning" href="learning.html" />
+    <link rel="prev" title="EDM to PyDM Migration Guide" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -49,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> EDM to PyDM Migration Guide
+            <a href="index.html" class="icon icon-home"> EDM to PyDM Migration Guide
           
 
           
@@ -84,8 +85,12 @@
             
             
               <p class="caption"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Motivation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#edm-to-pydm">EDM to PyDM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guide">Guide</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="learning.html">Learning</a></li>
 </ul>
 <p class="caption"><span class="caption-text">How-To</span></p>
@@ -116,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">EDM to PyDM Migration Guide</a>
+          <a href="index.html">EDM to PyDM Migration Guide</a>
         
       </nav>
 
@@ -145,15 +150,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>EDM to PyDM Migration Guide</li>
+      <li>Motivation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/motivation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -166,40 +171,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="edm-to-pydm-migration-guide">
-<h1>EDM to PyDM Migration Guide<a class="headerlink" href="#edm-to-pydm-migration-guide" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://controlssoftware.sns.ornl.gov/edm">EDM</a> (Extensible Display Manager) is used at many EPICS sites to create
-reliable, fast displays. It is based on X11/Linux and provides both an editor
-for creating pages and a runtime for displaying them.</p>
-<p><a class="reference external" href="https://github.com/slaclab/pydm">PyDM</a> (Python Display Manager) is a new framework for building control system
-graphical user interfaces using Python and Qt.</p>
-<p>It provides a system for the drag-and-drop creation of user interfaces using
-Qt Designer, and also allows for the creation of displays driven by Python code.</p>
-<p>PyDM is intended to span the range from simple displays without any dynamic
-behavior to complex high level applications, with the same set of widgets.</p>
-<p>Developers can extend the framework with custom widgets for site-specific
-tasks, and data plugins for multiple control systems.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Introduction</span></p>
+  <div class="section" id="motivation">
+<h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="edm-to-pydm">
+<h2>EDM to PyDM<a class="headerlink" href="#edm-to-pydm" title="Permalink to this headline">¶</a></h2>
+<p>Here are some of the major motivation factors into why EDM is being replaced
+and why SLAC decided to develop PyDM when other Display Managers exist at the
+EPICS community.</p>
+<ul class="simple">
+<li><p>Red Hat Linux to drop support for Motif after 2024 (End of Life and support
+for RHEL7)</p></li>
+<li><p>In 2015, <a class="reference external" href="https://confluence.slac.stanford.edu/download/attachments/234162674/EDMReplacementWhitePaper.pdf?version=1&amp;modificationDate=1524846521000&amp;api=v2">studies were performed</a> to evaluate software to be used as the
+next-generation display manager at SLAC, and <a class="reference external" href="https://confluence.slac.stanford.edu/download/attachments/234162674/Next_Gen_Requirement_Specification.pdf?version=1&amp;modificationDate=1524846518000&amp;api=v2">requirements for a new display
+manager</a> were compiled from the major users of EDM throughout the lab [2]</p></li>
+<li><p>No existing tools met the requirements defined by stakeholders</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning</a></li>
+<li><p>Key Goal: Drag-and-drop creation of displays (EDM style) and the ability to add intelligence (scripting) to displays using the same tool.</p></li>
+</ul>
+</li>
+<li><p>From the <a class="reference external" href="https://slacspace.slac.stanford.edu/sites/reviews/lclsii/controls_apr_2017/Committee%20Documents/CloseoutSlides[2].pptx">LCLS-II Controls Review Committee</a> (April 2017):</p>
+<ul>
+<li><p>“Consider deprecating EDM and Matlab, and use PyDM and Python for all new displays and high level applications.”</p></li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">How-To</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="how-to/colorPV.html">colorPV</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contributing</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="contrib/help.html">Getting Help With PyDM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contrib/requests.html">Bug and Requests</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
+<div class="section" id="guide">
+<h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
+<p>This guide was created with the purpose to bridge the gap for users switching
+from EDM to PyDM since some functionality when implemented on PyDM were not
+exactly copied from the ones on EDM on purpose to provide better flexibility
+and also the usage of more modern techniques.</p>
+<p>If you feel like something is missing, an error was found or would like more
+details about a certain subject, please feel free to contact the PyDM team at
+SLAC and we will do our best to address the issue.</p>
 </div>
 </div>
 
@@ -211,8 +216,10 @@ tasks, and data plugins for multiple control systems.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="motivation.html" class="btn btn-neutral float-right" title="Motivation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="learning.html" class="btn btn-neutral float-right" title="Learning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="EDM to PyDM Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
