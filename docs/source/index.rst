@@ -31,6 +31,13 @@ tasks, and data plugins for multiple control systems.
 
     how-to/colorPV.rst
     how-to/visibilityPV.rst
+    
+.. toctree::
+    :maxdepth: 1
+    :caption: Example Walk-Through
+    
+    example-walk-through/start_with_qdesigner.rst
+    example-walk-through/convert_existing_edm.rst
 
 .. toctree::
    :maxdepth: 1
