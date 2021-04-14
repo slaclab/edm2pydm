@@ -347,7 +347,7 @@ The banner is done, please note that by default every screen in PyDM will come w
 In PyDM all screens will have this set of menus:
 
 .. image::  /_static/example-walk-through/pydm/menu.png
-   :scale: 100 %
+   :scale: 70 %
    :align: center
 
 Click on ``File`` to get more options and find out more about PyDM:
@@ -425,25 +425,25 @@ In PyDM we do not have a ``Meter`` Widget - we have a similar widget we can use,
 Change the dimensions and properties as we previously did with other widgets, add PV:
 
 .. image::  /_static/example-walk-through/pydm/scale_indicator_pv.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
    
 Take off the ``precisionFromPV`` option and add a precision value of 2:
 
 .. image::  /_static/example-walk-through/pydm/scale_indicator_precision.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
    
 Change the color of the indicator if desired:
 
 .. image::  /_static/example-walk-through/pydm/scale_indicator_color.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
    
 You can also get a feel of how it would look in ``Preview Mode``, go to ``Form`` and select ``Preview``:
 
 .. image::  /_static/example-walk-through/pydm/preview_mode.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
 
 Now if you like how it looks, you can copy and paste it to get the second one.
@@ -452,13 +452,13 @@ Select the widget, ``Ctrl+c`` to copy it, and ``Ctrl+v`` to paste it. You will h
 Note that this widget does not have a label, so let’s add a simple ``QLabel``. Place a label right below the widget and make sure it has the same width, as well as it starts at the same X as the scale widget, and at Y + height of scaleIndicator for Y position:
 
 .. image::  /_static/example-walk-through/pydm/scale_indicator_label.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
 
 Additionally, you can give both these widgets a background color if wanted - to look like they are part of one widget (simulating EDM), just right click on the widget and select ``Change stylesheet`` to add a ``background-color`` and a ``border-color`` for both. Here is how they would approximately look:
 
 .. image::  /_static/example-walk-through/pydm/scale_indicator_grey.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
    
 .. note::
@@ -466,6 +466,111 @@ Additionally, you can give both these widgets a background color if wanted - to 
 	You can choose a color by picking directly one around your work area by selecting the ``Pick Screen Color``. This is useful when you don’t remember what color you used previously but want them to match with a color you already chose previously - see below:
    
 .. image::  /_static/example-walk-through/pydm/pick_screen_color.png
-   :scale: 80 %
+   :scale: 100 %
    :align: center
  
+ 
+Text Control – Editable- Motif Widget 
+#####################################
+EDM
+***
+Proceeding with the next section on our screen, we have a widget ``Text Control`` that is in ``Editable`` mode highlighted in blue below:
+
+.. image::  /_static/example-walk-through/edm/control_text_editable.png
+   :scale: 100 %
+   :align: center
+   
+PyDM
+****
+In PyDM, we use a ``PyDMLineEdit`` for a **Text Control** that is **Editable** (you can write in it):
+
+
+ .. image::  /_static/example-walk-through/pydm/edit_line.png
+   :scale: 80 %
+   :align: center
+
+It will have similar and additional properties as a ``PyDMLabel``.
+
+* Note how I added the labels above, we already covered those labels in this walk-through above. If you need to change one thing for multiple widgets of the same type, you can select all of them (mouse drag or Ctrl+left click) and change it for all at once, for example I took out the ``alarmSensitiveBorder`` property Off from the EGU labels:
+
+Select all those labels (``Ctrl+right click`` on the widget):
+
+ .. image::  /_static/example-walk-through/pydm/egu_labels.png
+   :scale: 100 %
+   :align: center
+   
+Uncheck the ``alarmSensitiveBorder`` box, unchecking only once will uncheck for all those selected widgets:
+
+ .. image::  /_static/example-walk-through/pydm/uncheck.png
+   :scale: 100 %
+   :align: center
+
+
+One thing that I also had to go back and do was to change the **Display Format** for some label widgets, you can do it by selecting multiple widgets again and change the property of the ``dispalyFormat`` to what the EDMs are - in this case I changed them from *Default* to *String*:
+
+
+ .. image::  /_static/example-walk-through/pydm/display_format.png
+   :scale: 100 %
+   :align: center
+
+
+Related Display
+###############
+EDM
+***
+Continuing with the next section in the screen we have a new widget that we have not covered here yet - the **Related Display**.
+
+ .. image::  /_static/example-walk-through/edm/edm_related_display.png
+   :scale: 80 %
+   :align: center
+
+
+
+PyDM
+****
+In PyDM we have a **Related Display** widget called ``PyDMRelatedDisplayButoon`` – this is a button to open another **PyDM** Display.
+
+In addition to this we also have the ``PyDMEDMDisplayButton`` – this is a button to open an **EDM** screen.
+
+In this case, we want to open existing ``.edl`` screens so we will choose the second option:
+
+
+ .. image::  /_static/example-walk-through/pydm/pydm_related_display.png
+   :scale: 80 %
+   :align: center
+   
+From the related button properties, we can add the name to be displayed on the button under the text area:
+
+ .. image::  /_static/example-walk-through/pydm/related_name.png
+   :scale: 100 %
+   :align: center
+   
+We can add the filename we want to open, under the ``filenames`` click on ``Change String List``:
+   
+ .. image::  /_static/example-walk-through/pydm/related_filename.png
+   :scale: 100 %
+   :align: center
+   
+Click on ``New`` to add a file and type the file name in the ``Value`` section:
+
+ .. image::  /_static/example-walk-through/pydm/related_dialog.png
+   :scale: 100 %
+   :align: center
+   
+.. important::
+
+	Note you have to write the path to this file relative to your current screen.
+	
+We can also define the related display file’s macros:
+
+ .. image::  /_static/example-walk-through/pydm/related_macros.png
+   :scale: 80 %
+   :align: center
+
+Check the ``openInNewWindow`` option to open the file in a new window:
+
+ .. image::  /_static/example-walk-through/pydm/related_new_window.png
+   :scale: 80 %
+   :align: center
+
+Again, as previously mentioned, when we have multiple widgets of the same type and you want to check a box or write the same macros for example, just select all of them and do it all in the same time by writing it only in one spot.
