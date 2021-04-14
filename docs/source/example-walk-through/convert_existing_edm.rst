@@ -406,3 +406,66 @@ For example if we wore to skip ahead and add a ``QGroupBox`` at the end, simply 
    	   :align: center
    	   
 
+Meter Widget
+########################
+EDM
+****
+.. image::  /_static/example-walk-through/edm/meter_widget.png
+   :scale: 80 %
+   :align: center
+   
+PyDM:
+*****
+In PyDM we do not have a ``Meter`` Widget - we have a similar widget we can use, but the design is a bit different, in the sense that it is not circular, here we can use a ``PyDMScaleIndicator`` widget:
+
+.. image::  /_static/example-walk-through/pydm/scale_indicator.png
+   :scale: 80 %
+   :align: center
+   
+Change the dimensions and properties as we previously did with other widgets, add PV:
+
+.. image::  /_static/example-walk-through/pydm/scale_indicator_pv.png
+   :scale: 80 %
+   :align: center
+   
+Take off the ``precisionFromPV`` option and add a precision value of 2:
+
+.. image::  /_static/example-walk-through/pydm/scale_indicator_precision.png
+   :scale: 80 %
+   :align: center
+   
+Change the color of the indicator if desired:
+
+.. image::  /_static/example-walk-through/pydm/scale_indicator_color.png
+   :scale: 80 %
+   :align: center
+   
+You can also get a feel of how it would look in ``Preview Mode``, go to ``Form`` and select ``Preview``:
+
+.. image::  /_static/example-walk-through/pydm/preview_mode.png
+   :scale: 80 %
+   :align: center
+
+Now if you like how it looks, you can copy and paste it to get the second one.
+Select the widget, ``Ctrl+c`` to copy it, and ``Ctrl+v`` to paste it. You will have to adjust the position for the second one and change the PV.
+
+Note that this widget does not have a label, so let’s add a simple ``QLabel``. Place a label right below the widget and make sure it has the same width, as well as it starts at the same X as the scale widget, and at Y + height of scaleIndicator for Y position:
+
+.. image::  /_static/example-walk-through/pydm/scale_indicator_label.png
+   :scale: 80 %
+   :align: center
+
+Additionally, you can give both these widgets a background color if wanted - to look like they are part of one widget (simulating EDM), just right click on the widget and select ``Change stylesheet`` to add a ``background-color`` and a ``border-color`` for both. Here is how they would approximately look:
+
+.. image::  /_static/example-walk-through/pydm/scale_indicator_grey.png
+   :scale: 80 %
+   :align: center
+   
+.. note::
+
+	You can choose a color by picking directly one around your work area by selecting the ``Pick Screen Color``. This is useful when you don’t remember what color you used previously but want them to match with a color you already chose previously - see below:
+   
+.. image::  /_static/example-walk-through/pydm/pick_screen_color.png
+   :scale: 80 %
+   :align: center
+ 
