@@ -25,15 +25,15 @@ Qt Designer window has 3 main parts:
    * you can drag and drop these widgets.
 2. **Middle area** – the working area
 
-   * contains the window that will eventually become your screen
+   * contains the window that will eventually become your screen display.
 3. **Right side** – properties
 
    * you can change the properties of the widgets in this area.
 
 
-Qt Designer comes with default widgets, they do not support PVs!! See some examples of default widgets on the left picture below:
+Qt Designer comes with default widgets, they do not support PVs!! See some examples of default widgets on the left picture below (your left):
 
-**PyDM** adds widgets that support access to PVs. See some examples of PyDM widgets on the right picture below – these widgets names start with ``*PyDM*...``
+**PyDM** adds widgets that support access to PVs. See some examples of PyDM widgets on the right picture below (your right) – these widgets' names start with ``*PyDM*...``
 
 
 .. image:: /_static/example-walk-through/pydm/default_widgets_2.PNG
