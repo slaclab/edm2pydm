@@ -644,8 +644,7 @@ In our case we might want to change a few main properties like: **text**, **chan
    :align: center
 
 
-For the **Visibility PV** we would handle it this way in PyDM. 
-**Right click** on the widget and select ``Edit Rule``:
+For the **Visibility PV** we would handle it this way in PyDM - **Right click** on the widget and select ``Edit Rule``:
 
  .. image::  /_static/example-walk-through/pydm/edit_rules.png
    :scale: 100 %
@@ -659,7 +658,7 @@ You will get a new little window where you will need to:
 * define the condition
 
 If you look at the EDM condition, it says **Not Visible** if the PV `value >= 1 and < 2`. 
-We will have to modify the condition to be ``true`` for ``Visible`` if instead:
+We will have to modify the condition to be ``true`` for **Visible if** instead:
 
  .. image::  /_static/example-walk-through/pydm/rule.png
    :scale: 100 %
@@ -670,4 +669,120 @@ Save it when you are ready.
 .. note::
 
 	For the 3 buttons I applied the same rule, so I was able to select all three buttons and just type the rule ones – this was applied for all 3.
+	
+	
+Menu Button
+###########
+EDM
+***
+The next widget we’re going to look at is a **Menu Button**:
+
+ .. image::  /_static/example-walk-through/edm/menu_button.png
+   :scale: 80 %
+   :align: center
+
+PyDM
+****
+In PyDM we handle this with the ``PyDMEnumComboBox`` widget:
+
+ .. image::  /_static/example-walk-through/pydm/enum_combo_box.PNG
+   :scale: 100 %
+   :align: center
+   
+   
+Let's inspect the properties on the righ:
+
+ .. image::  /_static/example-walk-through/pydm/enum_combo_box_prop.png
+   :scale: 100 %
+   :align: center
+
+Take the ``alarmSensitiveBorder`` off here, and add a ``channel`` PV:
+
+ .. image::  /_static/example-walk-through/pydm/enum_button_channel.png
+   :scale: 100 %
+   :align: center
+   
+   
+Horizontal Bar
+##############
+EDM
+***
+**Horizontal Bar** in EDM and its properties:
+
+ .. image::  /_static/example-walk-through/edm/horizontal_bar.png
+   :scale: 100 %
+   :align: center
+
+
+PyDM
+****
+In PyDM we can use the ``PyDMScaleIndicator`` for this type of widget:
+
+ .. image::  /_static/example-walk-through/pydm/scale_indicator.png
+   :scale: 80 %
+   :align: center
+
+
+Note, we should check the ``barIndicator`` for it to look like a progress bar, Also, we can changed the ``indicatorColor`` to be green, and take the ``showTicks`` off:
+
+ .. image::  /_static/example-walk-through/pydm/bar_indicator.png
+   :scale: 100 %
+   :align: center
+
+By default this scale indicator will be horizontal, but we can change the ``orientation`` to **Vertical** if we need to.
+
+
+We can also take the ``showLimits`` off to be more consistent with the EDM widget, as well as ``showValue`` off, and let's also check the ``originAtZero`` box:
+
+ .. image::  /_static/example-walk-through/pydm/bar_prop.png
+   :scale: 100 %
+   :align: center
+   
+.. note::
+
+	In Qt Designer it will not show the green progress indicator unless we are reading that PV and it has a value in it.
+	
+Let’s also add a label:
+
+ .. image::  /_static/example-walk-through/pydm/bar_label.png
+   :scale: 100 %
+   :align: center
+   
+  
+Choice Button
+#############
+EMD
+***
+**Choice button** in EDM in Edit mode:
+
+ .. image::  /_static/example-walk-through/edm/edm_choice_edit.png
+   :scale: 100 %
+   :align: center
+   
+**Choice button** in EDM in Exec mode:
+
+ .. image::  /_static/example-walk-through/edm/edm_choice_exec.png
+   :scale: 100 %
+   :align: center
+
+Properties:
+
+ .. image::  /_static/example-walk-through/edm/choice_prop.png
+   :scale: 100 %
+   :align: center
+   
+PyDM
+****
+In PyDM we would use a ``PyDMEnumButton`` for this widget:
+
+ .. image::  /_static/example-walk-through/pydm/enum_button.PNG
+   :scale: 100 %
+   :align: center
+
+
+Properties - please note that besides changing the width and height, we should take off the ``alarmSensitiveBorder``, inserted the channel, change the ``orientation`` to **Horizontal**, and set the **margins** settings all to 2 so there is little space between the buttons – imitating the EDM widget:
+
+ .. image::  /_static/example-walk-through/pydm/enum_prop.png
+   :scale: 100 %
+   :align: center
 
