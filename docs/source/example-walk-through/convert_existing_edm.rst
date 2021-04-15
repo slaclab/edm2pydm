@@ -574,3 +574,100 @@ Check the ``openInNewWindow`` option to open the file in a new window:
    :align: center
 
 Again, as previously mentioned, when we have multiple widgets of the same type and you want to check a box or write the same macros for example, just select all of them and do it all in the same time by writing it only in one spot.
+
+
+Slider
+######
+EDM
+***
+In the next section we meet a new widget that we have not discussed previously, the ``Motif Slider``:
+
+ .. image::  /_static/example-walk-through/edm/motif_slider.png
+   :scale: 80 %
+   :align: center
+
+
+PyDM
+****
+In PyDM we have a similar widget called ``PyDMSlider`` – drag and drop one in the new ``QControlBox`` (note we created a new QControlBox rather than doing that at the end as explained previously):
+
+ .. image::  /_static/example-walk-through/pydm/slider.png
+   :scale: 100 %
+   :align: center
+   
+Let's adjust some properties, let's change precision to 4 and take out the ``precisionFromPV``, aslo let's add a ``channel`` PV:
+
+ .. image::  /_static/example-walk-through/pydm/slider_prop.png
+   :scale: 100 %
+   :align: center
+   
+Let's also add a label on top of this widget to imitate what we have in EDM:
+
+ .. image::  /_static/example-walk-through/pydm/slider_label.png
+   :scale: 100 %
+   :align: center
+
+
+Message Button - Push Button
+############################
+EDM
+***
+The Message Button in EDM:
+
+ .. image::  /_static/example-walk-through/edm/edm_push_button.png
+   :scale: 100 %
+   :align: center
+  
+Properties.
+
+Notice here the Visibility PV:
+
+
+ .. image::  /_static/example-walk-through/edm/edm_push_button_prop.png
+   :scale: 80 %
+   :align: center
+
+   
+PyDM
+****
+In PyDM we would use a ``PyDMPushButton`` for this type of widget:
+
+
+ .. image::  /_static/example-walk-through/pydm/pydm_push_button.PNG
+   :scale: 90 %
+   :align: center
+   
+In our case we might want to change a few main properties like: **text**, **channel**, **pressValue**, **releaseValue**, and maybe others.
+
+ .. image::  /_static/example-walk-through/pydm/push_button_prop.png
+   :scale: 90 %
+   :align: center
+
+
+For the **Visibility PV** we would handle it this way in PyDM. 
+**Right click** on the widget and select ``Edit Rule``:
+
+ .. image::  /_static/example-walk-through/pydm/edit_rules.png
+   :scale: 100 %
+   :align: center
+   
+   
+You will get a new little window where you will need to:
+* click on Add Rule
+* give it a Rule name 
+* add the channel PV 
+* define the condition
+
+If you look at the EDM condition, it says **Not Visible** if the PV `value >= 1 and < 2`. 
+We will have to modify the condition to be ``true`` for ``Visible`` if instead:
+
+ .. image::  /_static/example-walk-through/pydm/rule.png
+   :scale: 100 %
+   :align: center
+   
+Save it when you are ready. 
+
+.. note::
+
+	For the 3 buttons I applied the same rule, so I was able to select all three buttons and just type the rule ones – this was applied for all 3.
+
