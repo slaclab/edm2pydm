@@ -827,6 +827,9 @@ This is approximately how it will look:
    :scale: 100 %
    :align: center
    
+We can also take a different approach here, and instead of creating three boxes, we could create one and add some horizontal lines:
+
+
 
 Radio Button 
 ############
@@ -886,3 +889,5 @@ Add the rule by right clicking and choosing Edit Rule:
  .. image::  /_static/example-walk-through/pydm/radio_button_add_rule.png
    :scale: 100 %
    :align: center
+
+
