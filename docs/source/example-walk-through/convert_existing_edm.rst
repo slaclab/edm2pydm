@@ -785,4 +785,104 @@ Properties - please note that besides changing the width and height, we should t
  .. image::  /_static/example-walk-through/pydm/enum_prop.png
    :scale: 100 %
    :align: center
+   
+   
+Rectangles - Frames
+###################
+EDM
+***
+In EDM we have rectangles that let us visually separate sections:
 
+ .. image::  /_static/example-walk-through/edm/edm_rectangle.png
+   :scale: 100 %
+   :align: center
+   
+   
+PyDM
+****
+In PyDM we can accomplish the same thing with a ``QFrame``:
+
+ .. image::  /_static/example-walk-through/pydm/frame.png
+   :scale: 100 %
+   :align: center
+   
+Adjust the width and height and copy and paste the frame to reuse it. 
+You can also change the style of these frames by choosing a different ``frameShape``:
+
+  
+ .. image::  /_static/example-walk-through/pydm/frame_shape.png
+   :scale: 100 %
+   :align: center
+
+Here we chose a ``Box`` and also set the ``frameShodow`` to **Plain** and ``lineWidgth`` to 2:
+
+ .. image::  /_static/example-walk-through/pydm/frame_prop.png
+   :scale: 100 %
+   :align: center
+   
+   
+This is approximately how it will look:
+
+ .. image::  /_static/example-walk-through/pydm/frames.png
+   :scale: 100 %
+   :align: center
+   
+
+Radio Button 
+############
+EDM
+***
+**Radio Button** in EDM:
+
+ .. image::  /_static/example-walk-through/edm/edm_radio_button.png
+   :scale: 100 %
+   :align: center
+
+
+Note if more widgets are in a **Group Box**, you’ll have to middle click and select ``Ungroup`` for all the groups until you get to the ``Radio Box``:
+
+
+ .. image::  /_static/example-walk-through/edm/edm_group_box.png
+   :scale: 100 %
+   :align: center
+   
+Properties of the ``Radio Box``:
+
+ .. image::  /_static/example-walk-through/edm/radio_box_prop.png
+   :scale: 100 %
+   :align: center
+
+PyDM
+****
+In PyDM we will use a ``PyDMEnumButton`` for this widget as well:
+
+ .. image::  /_static/example-walk-through/pydm/enum_button.PNG
+   :scale: 100 %
+   :align: center
+   
+Set the `widgetType` to ``RadioButton``:
+
+ .. image::  /_static/example-walk-through/pydm/radio_button.png
+   :scale: 100 %
+   :align: center
+
+
+Also change the margins from 9 to probably a smaller value, except you want to have some distance vertically between them, so leave the ``verticalSpacing`` to 9.
+
+ .. image::  /_static/example-walk-through/pydm/vertical_space.png
+   :scale: 100 %
+   :align: center
+
+Besides inserting the channels, some of these radio buttons have a rule - to be invisible when a condition is met, so let’s select all the widgets that will have this rule (the rule is the same for all in this case) and add it in:
+Select all radio button widgets that will have the rule. You can select them with holding down ``Ctrl`` and clicking on the widget with the mouse:
+
+
+ .. image::  /_static/example-walk-through/pydm/radio_button_rule.png
+   :scale: 100 %
+   :align: center
+   
+Add the rule by right clicking and choosing Edit Rule:
+
+ .. image::  /_static/example-walk-through/pydm/radio_button_add_rule.png
+   :scale: 100 %
+   :align: center
