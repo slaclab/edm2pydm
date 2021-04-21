@@ -80,7 +80,7 @@ For a quick check, you can try to open the ``.ui`` file now with ``PyDM``::
 	
 .. note::
 
-	When we open an ``.ui`` file with PyDM we pass in macros using ``-m`` folowed by the macros definition.
+	When we open an ``.ui`` file with PyDM we pass in macros using ``-m`` followed by the macros’ definition.
 	
 EDM - toggle title
 ******************
@@ -300,8 +300,8 @@ Some properties:
 
 PyDM
 ****
-Use a ``PyDMLabel`` for a non editable **Control Text** in PyDM. Drag and drop a ``PyDMLabel``.
-Go through the same process as for a **Static Text** with changing the dimensions, position and font (if needed).
+Use a ``PyDMLabel`` for a non-editable **Control Text** in PyDM. Drag and drop a ``PyDMLabel``.
+Go through the same process as for a **Static Text** with changing the dimensions, position, and font (if needed).
 Expend the font to make it bold from the font down arrow properties:
 
 .. image::  /_static/example-walk-through/pydm/bold_font.png
@@ -573,7 +573,7 @@ Check the ``openInNewWindow`` option to open the file in a new window:
    :scale: 80 %
    :align: center
 
-Again, as previously mentioned, when we have multiple widgets of the same type and you want to check a box or write the same macros for example, just select all of them and do it all in the same time by writing it only in one spot.
+Again, as previously mentioned, when we have multiple widgets of the same type and you want to check a box or write the same macros for example, just select all of them and do it all at the same time by writing it only in one spot.
 
 
 Slider
@@ -690,7 +690,7 @@ In PyDM we handle this with the ``PyDMEnumComboBox`` widget:
    :align: center
    
    
-Let's inspect the properties on the righ:
+Let's inspect the properties on the right:
 
  .. image::  /_static/example-walk-through/pydm/enum_combo_box_prop.png
    :scale: 100 %
@@ -723,7 +723,7 @@ In PyDM we can use the ``PyDMScaleIndicator`` for this type of widget:
    :align: center
 
 
-Note, we should check the ``barIndicator`` for it to look like a progress bar, Also, we can changed the ``indicatorColor`` to be green, and take the ``showTicks`` off:
+Note, we should check the ``barIndicator`` for it to look like a progress bar, Also, we can change the ``indicatorColor`` to be green, and take the ``showTicks`` off:
 
  .. image::  /_static/example-walk-through/pydm/bar_indicator.png
    :scale: 100 %
@@ -827,8 +827,11 @@ This is approximately how it will look:
    :scale: 100 %
    :align: center
    
-We can also take a different approach here, and instead of creating three boxes, we could create one and add some horizontal lines:
+We can also take a different approach here, and instead of creating three boxes, we could create one and add some horizontal lines, and from the properties give them different thickness to be more pronounced if needed.
 
+ .. image::  /_static/example-walk-through/pydm/horizontal_line.PNG
+   :scale: 100 %
+   :align: center
 
 
 Radio Button 
@@ -890,4 +893,84 @@ Add the rule by right clicking and choosing Edit Rule:
    :scale: 100 %
    :align: center
 
+
+Embeded Display
+###############
+EDM
+***
+The last portion on this screen that we have not covered yet is the `Embedded Display`, looking at the properties, we see that this embedded display is opening a file highlighted below:
+
+ .. image::  /_static/example-walk-through/edm/embeded_widndow.PNG
+   :scale: 100 %
+   :align: center
+
+
+Notice that we're using a macro here `$(DISP)` - if you are unsure of what this macro represents and you have to specify that in a `PyDM` embedded display, you can see the macros by right-clicking on the widget, and choose `Show Macros`
+
+Also, if we need to investigate the `Related Display Buttons` a little further, we could open the actual edm screen from the terminal and look at the properties of those buttons::
+
+	edm mgnt_unit_epcs.edl           
+
+This will open the following window in `Edit` mode, so we can click on each widget to see their properties:
+
+ .. image::  /_static/example-walk-through/edm/open_edl_screen.PNG
+   :scale: 70 %
+   :align: center
+   
+
+
+PyDM
+****
+In `PyDM` we'll have to create that file first. Go to `File` -> `New` and create a new `Widget`, set the width and height to correspond to the ones seen in the EDM Embedded Display properties.
+
+ .. image::  /_static/example-walk-through/pydm/new_file.PNG
+   :scale: 70 %
+   :align: center
+   
+Notice that in the EDM Embedded Display we have 4 **Related Display Buttons**, let's recreate them in `PyDM`. We'll be using a widget we already covered previously - the `PyDMEDMDisplayButton` to open existing edm displays, thus we will not go into too many details here.
+Open the displays by clicking on the EDM buttons (from the EDM screen) to see what files we need to open with the Related Display widgets by looking at the `Toggle Path` option as previously explained, so we can add those file names and their paths to our `PyDMEDMDisplayButton` widgets.
+
+Add their file names:
+
+ .. image::  /_static/example-walk-through/pydm/edm_display_buttons.PNG
+   :scale: 60 %
+   :align: center
+
+Preview:
+
+ .. image::  /_static/example-walk-through/pydm/epsc_file.PNG
+   :scale: 60 %
+   :align: center
+
+.. note::
+	Make sure you check the `openInNewWindow` option for each button!
+	
+	
+Now that we have this file created, let's go back to our main screen and add a `PyDmEmbeddedDisplay` widget:
+
+ .. image::  /_static/example-walk-through/pydm/pydm_embeded_display.PNG
+   :scale: 60 %
+   :align: center
+   
+Let's add the file name that we just created, and because they are in the same folder, no additional paths need to be included in the `filename` properties, only the file name itself.
+
+You'll notice that as soon as you add the filename the display we created previously will appear  on the main screen:
+
+ .. image::  /_static/example-walk-through/pydm/embeded_display.PNG
+   :scale: 60 %
+   :align: center
+
+.. note::
+	If the display is not showing up, make sure the path of the file relative to the current screen is correct!
+	
+
+This concludes all the widgets on this screen - go to the next section for some touch up and stylesheets!! And this is approximately  how it looks now:
+
+ .. image::  /_static/example-walk-through/pydm/approximate.PNG
+   :scale: 60 %
+   :align: center
+   
+.. note::
+	Some of the widgets are disabled because we only have Write-Only access.
+	
 
