@@ -898,20 +898,20 @@ Embeded Display
 ###############
 EDM
 ***
-The last portion on this screen that we have not covered yet is the `Embedded Display`, looking at the properties, we see that this embedded display is opening a file highlighted below:
+The last portion on this screen that we have not covered yet is the ``Embedded Display``, looking at the properties, we see that this embedded display is opening a file highlighted below:
 
  .. image::  /_static/example-walk-through/edm/embeded_widndow.PNG
    :scale: 100 %
    :align: center
 
 
-Notice that we're using a macro here `$(DISP)` - if you are unsure of what this macro represents and you have to specify that in a `PyDM` embedded display, you can see the macros by right-clicking on the widget, and choose `Show Macros`
+Notice that we're using a macro here ``$(DISP)`` - if you are unsure of what this macro represents and you have to specify that in a ``PyDM`` embedded display, you can see the macros by right-clicking on the widget, and choose ``Show Macros``
 
-Also, if we need to investigate the `Related Display Buttons` a little further, we could open the actual edm screen from the terminal and look at the properties of those buttons::
+Also, if we need to investigate the ``Related Display Buttons`` a little further, we could open the actual edm screen from the terminal and look at the properties of those buttons::
 
 	edm mgnt_unit_epcs.edl           
 
-This will open the following window in `Edit` mode, so we can click on each widget to see their properties:
+This will open the following window in ``Edit`` mode, so we can click on each widget to see their properties:
 
  .. image::  /_static/example-walk-through/edm/open_edl_screen.PNG
    :scale: 70 %
@@ -921,14 +921,14 @@ This will open the following window in `Edit` mode, so we can click on each widg
 
 PyDM
 ****
-In `PyDM` we'll have to create that file first. Go to `File` -> `New` and create a new `Widget`, set the width and height to correspond to the ones seen in the EDM Embedded Display properties.
+In ``PyDM`` we'll have to create that file first. Go to ``File`` -> ``New`` and create a new ``Widget``, set the width and height to correspond to the ones seen in the EDM Embedded Display properties.
 
  .. image::  /_static/example-walk-through/pydm/new_file.PNG
    :scale: 70 %
    :align: center
    
-Notice that in the EDM Embedded Display we have 4 **Related Display Buttons**, let's recreate them in `PyDM`. We'll be using a widget we already covered previously - the `PyDMEDMDisplayButton` to open existing edm displays, thus we will not go into too many details here.
-Open the displays by clicking on the EDM buttons (from the EDM screen) to see what files we need to open with the Related Display widgets by looking at the `Toggle Path` option as previously explained, so we can add those file names and their paths to our `PyDMEDMDisplayButton` widgets.
+Notice that in the EDM Embedded Display we have 4 **Related Display Buttons**, let's recreate them in ``PyDM``. We'll be using a widget we already covered previously - the `PyDMEDMDisplayButton` to open existing edm displays, thus we will not go into too many details here.
+Open the displays by clicking on the EDM buttons (from the EDM screen) to see what files we need to open with the Related Display widgets by looking at the ``Toggle Path`` option as previously explained, so we can add those file names and their paths to our ``PyDMEDMDisplayButton`` widgets.
 
 Add their file names:
 
@@ -943,16 +943,16 @@ Preview:
    :align: center
 
 .. note::
-	Make sure you check the `openInNewWindow` option for each button!
+	Make sure you check the ``openInNewWindow`` option for each button!
 	
 	
-Now that we have this file created, let's go back to our main screen and add a `PyDmEmbeddedDisplay` widget:
+Now that we have this file created, let's go back to our main screen and add a ``PyDmEmbeddedDisplay`` widget:
 
  .. image::  /_static/example-walk-through/pydm/pydm_embeded_display.PNG
    :scale: 60 %
    :align: center
    
-Let's add the file name that we just created, and because they are in the same folder, no additional paths need to be included in the `filename` properties, only the file name itself.
+Let's add the file name that we just created, and because they are in the same folder, no additional paths need to be included in the ``filename`` properties, only the file name itself.
 
 You'll notice that as soon as you add the filename the display we created previously will appear  on the main screen:
 
