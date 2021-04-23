@@ -11,7 +11,7 @@ As mentioned priviously, besides changing the stylesheet for individual widgets,
 There are many examples and a great amount of information online about different styles for different widgets. Whenever you want to change a style of a widget, you can simply search for **QT Stylesheet for ... PushButton** for example and you can copy and paste those styles thay you find online into your own ``.qss`` file. 
 There are also free downloadable ``.qss`` files that others have created, with different themes.
 
-In the `.qss` file that we previously created, let's add some more styles for the following widgets. Please note that this is very basic styles that try to simulate a bit the EDM style:
+In the ``.qss`` file that we previously created, let's add some more styles for the following widgets. Please note that these are very basic styles that try to simulate a bit the EDM style:
 
 * ``PyDMPushButton``::
 
@@ -85,7 +85,7 @@ Notice how the ``PyDMLabel`` from the top-left corner now has a background color
 Before we do that, here is a trick we can use to make it easier on us in ``Qt Designer``:
 
 .. note::
-	**Let's add the information from our `.qss` file, into the main `Form` from our screen - this way we'll have the same styles while working in ``Qt Designer``** By adding them to the ``Form`` it will be applied to all the widgets, as the ``Form`` is the Top Level containing all the widgets:
+	Let's add the information from our `.qss` file, into the main `Form` from our screen - this way we'll have the same styles while working in ``Qt Designer``. By adding them to the ``Form`` they will be applied to all the widgets, as the ``Form`` is the Top Level containing all the widgets:
 	
 * Right click on the ``Form`` from the right side of the ``Qt Designer`` under the ``Object Inspector`` section above, and select ``Change styleSheet..``:
 
@@ -99,7 +99,7 @@ Before we do that, here is a trick we can use to make it easier on us in ``Qt De
    :scale: 80 %
    :align: center
    
-* Click `Apply`.
+* Click ``Apply``.
 
 .. important::
 	Please remove the stylesheet from the `Form` after you are done with ``Qt Designer`` - it is **not** advised to leave it in there if we use a ``.qss`` file as this will take precedence over the ``.qss`` file and could cause style issues later on if we're changing the ``.qss`` file.
@@ -131,7 +131,7 @@ One other thing that we could try to simulate is the ``Embedded Display`` widget
 
 There are other things you can try to customize here but if you are happy with your screen, let's get rid of the ``Form`` stylesheet from the ``Qt Designer`` as we do not need it anymore:
 
-* Go back to the ``Change styleSheet`` option, select all that is in there and hit ``Delete`` on your keyboard.
+* Go back to the **Form**'s ``Change styleSheet`` option, select all that is in there and hit ``Delete`` on your keyboard.
 
 
 Open the screen again, and this is what we should have for now:

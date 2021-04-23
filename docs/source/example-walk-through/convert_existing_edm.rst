@@ -92,7 +92,7 @@ Change the window title to display the path to the file - **middle click** on th
 
 PyDM - toggle title - View File Path
 ************************************
-Change the window title to display the file location – when window is open go to ``View`` -> ``Show File Path`` in **Title Bar**:
+Change the window title to display the file location – when the window is open go to ``View`` -> ``Show File Path`` in **Title Bar**:
 
 .. image::  /_static/example-walk-through/pydm/pydm_view_file_path.png
    :scale: 100 %
@@ -104,7 +104,7 @@ Banner
 EDM
 ****
 
-Most EDM screens will have a banner. Inspect the widget used for this banner by selecting the banner, and left clicking on the it, you will get the properties of a ``Rectangle`` widget:
+Most EDM screens will have a banner. Inspect the widget used for this banner by selecting the banner, and left clicking on it, you will get the properties of a ``Rectangle`` widget:
 
 .. image::  /_static/example-walk-through/edm/banner_rectangle.png
    :scale: 100 %
@@ -219,7 +219,7 @@ Some of its properties:
 
 PyDM
 *****
-For Static Text in PyDM use a ``QLabel``
+For Static Text in PyDM use a ``QLabel``.
 Drag and drop a QtLabel:
 
 .. image::  /_static/example-walk-through/pydm/qlabel.png
@@ -294,7 +294,7 @@ Example of Control Text highlighted below in blue:
 Some properties:
 
 .. image::  /_static/example-walk-through/edm/edm_control_text_prop.png
-   :scale: 100 %
+   :scale: 70 %
    :align: center
    
 
@@ -330,8 +330,9 @@ Let's add a PV:
 	
 .. note::
 	
-	If we don’t have Qt Designer set to be “Online” we will not see the PVs’ values in QtDesigner. To set the Qt Designer online we need to export this variable to 1::
-	export PYDM_DESIGNER_ONLINE=1 
+	If we don’t have Qt Designer set to be “Online” we will not see the PVs’ values in QtDesigner. To set the Qt Designer online we need to export this variable to 1:
+	
+		``export PYDM_DESIGNER_ONLINE=1``
 
 
 The banner is done, please note that by default every screen in PyDM will come with similar buttons as in EDM, so there are no widgets for these:
@@ -491,7 +492,7 @@ In PyDM, we use a ``PyDMLineEdit`` for a **Text Control** that is **Editable** (
 
 It will have similar and additional properties as a ``PyDMLabel``.
 
-* Note how I added the labels above, we already covered those labels in this walk-through above. If you need to change one thing for multiple widgets of the same type, you can select all of them (mouse drag or Ctrl+left click) and change it for all at once, for example I took out the ``alarmSensitiveBorder`` property Off from the EGU labels:
+* Note how I added the the other labels, we already covered those labels in this walk-through above. If you need to change one thing for multiple widgets of the same type, you can select all of them (mouse drag or Ctrl+left click) and change it for all at once, for example I took out the ``alarmSensitiveBorder`` property Off from the EGU labels:
 
 Select all those labels (``Ctrl+right click`` on the widget):
 
@@ -652,6 +653,7 @@ For the **Visibility PV** we would handle it this way in PyDM - **Right click** 
    
    
 You will get a new little window where you will need to:
+
 * click on Add Rule
 * give it a Rule name 
 * add the channel PV 
@@ -780,7 +782,7 @@ In PyDM we would use a ``PyDMEnumButton`` for this widget:
    :align: center
 
 
-Properties - please note that besides changing the width and height, we should take off the ``alarmSensitiveBorder``, inserted the channel, change the ``orientation`` to **Horizontal**, and set the **margins** settings all to 2 so there is little space between the buttons – imitating the EDM widget:
+Properties - please note that besides changing the width and height, we should take off the ``alarmSensitiveBorder``, insert the channel, change the ``orientation`` to **Horizontal**, and set the **margins** settings all to 2 so there is little space between the buttons – imitating the EDM widget:
 
  .. image::  /_static/example-walk-through/pydm/enum_prop.png
    :scale: 100 %
@@ -927,7 +929,7 @@ In ``PyDM`` we'll have to create that file first. Go to ``File`` -> ``New`` and 
    :scale: 70 %
    :align: center
    
-Notice that in the EDM Embedded Display we have 4 **Related Display Buttons**, let's recreate them in ``PyDM``. We'll be using a widget we already covered previously - the `PyDMEDMDisplayButton` to open existing edm displays, thus we will not go into too many details here.
+Notice that in the EDM Embedded Display we have 4 **Related Display Buttons**, let's recreate them in ``PyDM``. We'll be using a widget we already covered previously - the ``PyDMEDMDisplayButton`` to open existing edm displays, thus we will not go into too many details here.
 Open the displays by clicking on the EDM buttons (from the EDM screen) to see what files we need to open with the Related Display widgets by looking at the ``Toggle Path`` option as previously explained, so we can add those file names and their paths to our ``PyDMEDMDisplayButton`` widgets.
 
 Add their file names:

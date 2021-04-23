@@ -34,7 +34,7 @@ tasks, and data plugins for multiple control systems.
     
 .. toctree::
     :maxdepth: 1
-    :caption: Example Walk-Through
+    :caption: Example Run Non-Layout Mode
     
     example-walk-through/start_with_qdesigner.rst
     example-walk-through/convert_existing_edm.rst
