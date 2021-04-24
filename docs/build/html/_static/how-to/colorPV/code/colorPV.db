@@ -1,0 +1,27 @@
+record(ai, "EDM2PYDM:VALUE")
+{
+   field(PINI, "YES")
+   field(VAL,  0)
+   field(PREC, 3)
+   field(HOPR, 1000)
+   field(LOPR, -1000)
+   field(HIHI, 900)
+   field(HIGH, 500)
+   field(LOW, -500)
+   field(LOLO, -900)
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EDM2PYDM:NOALARM")
+{
+   field(PINI, "YES")
+   field(VAL,  50)
+   field(PREC, 3)
+   field(HOPR, 1000)
+   field(LOPR, -1000)
+}
+
+
