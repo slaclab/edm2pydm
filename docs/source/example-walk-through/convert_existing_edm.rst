@@ -39,7 +39,7 @@ In the Title of the window's properties, you can see that we use a macro ``$(DEV
 PyDM - set Title
 ****************
 When selecting the window (in the work area) you will get on the right side of the Qt Designer, the properties of the window. 
-Scrolling down in the properties area you will see one called ``windowTitle`` – change the default name (`Form`) to a custom name.
+Scrolling down in the properties area you will see one called ``windowTitle`` – change the default name (``Form``) to a custom name.
 
 .. image::  /_static/example-walk-through/pydm/pydm_window_properties.png
    :scale: 80 %
