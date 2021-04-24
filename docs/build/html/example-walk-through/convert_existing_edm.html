@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Convert an Existing EDM Screen to a PyDM Screen &mdash; EDM to PyDM Migration Guide 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Touch Up and Stylesheets" href="stylesheets.html" />
+    <link rel="prev" title="Start with Qt Designer" href="start_with_qdesigner.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> EDM to PyDM Migration Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/colorPV.html">colorPV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/visibilityPV.html">visibilityPV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Example Run Non-Layout Mode</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start_with_qdesigner.html">Start with Qt Designer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Convert an Existing EDM Screen to a PyDM Screen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#window-title-and-properties">Window Title and Properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#edm-title">EDM - Title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydm-set-title">PyDM - set Title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edm-window-dimensions">EDM - window dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydm-set-window-dimensions">PyDM - set window dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edm-toggle-title">EDM - toggle title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydm-toggle-title-view-file-path">PyDM - toggle title - View File Path</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#banner">Banner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#edm">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydm-banner">PyDM - banner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#static-text">Static Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydm">PyDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edm-static-text-with-macro">EDM - static text with Macro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydm-text-with-macro">PyDM - text with Macro</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#text-control-non-editable">Text Control – Non-Editable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#grouping-things-together">Grouping Things Together</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#meter-widget">Meter Widget</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">PyDM:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#text-control-editable-motif-widget">Text Control – Editable- Motif Widget</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#related-display">Related Display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#slider">Slider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#message-button-push-button">Message Button - Push Button</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#menu-button">Menu Button</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#horizontal-bar">Horizontal Bar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#choice-button">Choice Button</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#emd">EMD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rectangles-frames">Rectangles - Frames</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radio-button">Radio Button</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id23">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#embeded-display">Embeded Display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id25">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">PyDM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stylesheets.html">Touch Up and Stylesheets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/help.html">Getting Help With PyDM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/requests.html">Bug and Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab/pydm">PyDM GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://controlssoftware.sns.ornl.gov/edm">EDM Website</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">EDM to PyDM Migration Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Convert an Existing EDM Screen to a PyDM Screen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/example-walk-through/convert_existing_edm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="convert-an-existing-edm-screen-to-a-pydm-screen">
+<h1>Convert an Existing EDM Screen to a PyDM Screen<a class="headerlink" href="#convert-an-existing-edm-screen-to-a-pydm-screen" title="Permalink to this headline">¶</a></h1>
+<p>In this section we will go over an existing EDM screen and try to convert it to a PyDM screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are multiple ways one can go about designing a screen in PyDM, therefore in this Walk-through we will merely cover a particular approach but please be aware that there could be other approaches that are better or simply more convenient for you.</p>
+</div>
+<p>Let’s start with the screen that we want to convert:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/screen.PNG"><img alt="../_images/screen.PNG" src="../_images/screen.PNG" style="width: 906.0px; height: 712.0px;" /></a>
+</div>
+<p>The first steps that we want to take when converting an EDM screen, is to go in <code class="docutils literal notranslate"><span class="pre">Edit</span></code> mode on the EDM screen and inspect what types of widgets we have so that we know what widgets we should be using in PyDM.</p>
+<p>To do this, <strong>middle click</strong> on the EDM screen and select <code class="docutils literal notranslate"><span class="pre">Edit</span></code> – see highlighted in blue in the image below:</p>
+<img alt="../_images/edm_edit_mode.png" src="../_images/edm_edit_mode.png" />
+<p>Now you can inspect individual widgets’ properties by <strong>left clicking</strong> on the widget you want to inspect.</p>
+<div class="section" id="window-title-and-properties">
+<h2>Window Title and Properties<a class="headerlink" href="#window-title-and-properties" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="edm-title">
+<h3>EDM - Title<a class="headerlink" href="#edm-title" title="Permalink to this headline">¶</a></h3>
+<p>Middle click on the background of the window and select Display Properties:</p>
+<a class="reference internal image-reference" href="../_images/edm_display_properties.png"><img alt="../_images/edm_display_properties.png" class="align-center" src="../_images/edm_display_properties.png" style="width: 389.0px; height: 260.0px;" /></a>
+<p>In the Title of the window’s properties, you can see that we use a macro <code class="docutils literal notranslate"><span class="pre">$(DEV)</span></code>, we want to do the same in PyDM.</p>
+</div>
+<div class="section" id="pydm-set-title">
+<h3>PyDM - set Title<a class="headerlink" href="#pydm-set-title" title="Permalink to this headline">¶</a></h3>
+<p>When selecting the window (in the work area) you will get on the right side of the Qt Designer, the properties of the window.
+Scrolling down in the properties area you will see one called <code class="docutils literal notranslate"><span class="pre">windowTitle</span></code> – change the default name (<cite>Form</cite>) to a custom name.</p>
+<a class="reference internal image-reference" href="../_images/pydm_window_properties.png"><img alt="../_images/pydm_window_properties.png" class="align-center" src="../_images/pydm_window_properties.png" style="width: 366.40000000000003px; height: 285.6px;" /></a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In PyDM we define macros with curly brackets instead of parenthesis, e.g.: <code class="docutils literal notranslate"><span class="pre">${DEV}</span></code></p>
+</div>
+</div>
+<div class="section" id="edm-window-dimensions">
+<h3>EDM - window dimensions<a class="headerlink" href="#edm-window-dimensions" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/edm_window_dimensions.png"><img alt="../_images/edm_window_dimensions.png" class="align-center" src="../_images/edm_window_dimensions.png" style="width: 388.0px; height: 261.0px;" /></a>
+</div>
+<div class="section" id="pydm-set-window-dimensions">
+<h3>PyDM - set window dimensions<a class="headerlink" href="#pydm-set-window-dimensions" title="Permalink to this headline">¶</a></h3>
+<p>From the Properties area, go to the <code class="docutils literal notranslate"><span class="pre">Width</span></code> and <code class="docutils literal notranslate"><span class="pre">Height</span></code> properties and change them accordingly:</p>
+<a class="reference internal image-reference" href="../_images/pydm_window_dimensions.png"><img alt="../_images/pydm_window_dimensions.png" class="align-center" src="../_images/pydm_window_dimensions.png" style="width: 403.0px; height: 287.0px;" /></a>
+<p>Now let’s save the File in PyDM!
+Type <code class="docutils literal notranslate"><span class="pre">Ctrl+s</span></code> and give the window a proper name, in this case we’ll name it the same way as the edm screen:</p>
+<a class="reference internal image-reference" href="../_images/save.png"><img alt="../_images/save.png" class="align-center" src="../_images/save.png" style="width: 525.0px; height: 87.0px;" /></a>
+<p>For a quick check, you can try to open the <code class="docutils literal notranslate"><span class="pre">.ui</span></code> file now with <code class="docutils literal notranslate"><span class="pre">PyDM</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pydm -m “DEV=PV:NAME:HERE” mgnt_unit2.ui
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When we open an <code class="docutils literal notranslate"><span class="pre">.ui</span></code> file with PyDM we pass in macros using <code class="docutils literal notranslate"><span class="pre">-m</span></code> followed by the macros’ definition.</p>
+</div>
+</div>
+<div class="section" id="edm-toggle-title">
+<h3>EDM - toggle title<a class="headerlink" href="#edm-toggle-title" title="Permalink to this headline">¶</a></h3>
+<p>Change the window title to display the path to the file - <strong>middle click</strong> on the window and select <code class="docutils literal notranslate"><span class="pre">Toggle</span> <span class="pre">Title</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/edm_toggle_title.png"><img alt="../_images/edm_toggle_title.png" class="align-center" src="../_images/edm_toggle_title.png" style="width: 161.0px; height: 287.0px;" /></a>
+</div>
+<div class="section" id="pydm-toggle-title-view-file-path">
+<h3>PyDM - toggle title - View File Path<a class="headerlink" href="#pydm-toggle-title-view-file-path" title="Permalink to this headline">¶</a></h3>
+<p>Change the window title to display the file location – when the window is open go to <code class="docutils literal notranslate"><span class="pre">View</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">File</span> <span class="pre">Path</span></code> in <strong>Title Bar</strong>:</p>
+<a class="reference internal image-reference" href="../_images/pydm_view_file_path.png"><img alt="../_images/pydm_view_file_path.png" class="align-center" src="../_images/pydm_view_file_path.png" style="width: 372.0px; height: 193.0px;" /></a>
+</div>
+</div>
+<div class="section" id="banner">
+<h2>Banner<a class="headerlink" href="#banner" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="edm">
+<h3>EDM<a class="headerlink" href="#edm" title="Permalink to this headline">¶</a></h3>
+<p>Most EDM screens will have a banner. Inspect the widget used for this banner by selecting the banner, and left clicking on it, you will get the properties of a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> widget:</p>
+<a class="reference internal image-reference" href="../_images/banner_rectangle.png"><img alt="../_images/banner_rectangle.png" class="align-center" src="../_images/banner_rectangle.png" style="width: 211.0px; height: 374.0px;" /></a>
+</div>
+<div class="section" id="pydm-banner">
+<h3>PyDM - banner<a class="headerlink" href="#pydm-banner" title="Permalink to this headline">¶</a></h3>
+<p>There are multiple ways for replicating an EDM banner in PyDM, in this example we will be using a <code class="docutils literal notranslate"><span class="pre">QtFrame</span></code>.</p>
+<p>Form the left side where the widgets are, drag and drop a <code class="docutils literal notranslate"><span class="pre">Frame</span></code> on your window:</p>
+<a class="reference internal image-reference" href="../_images/banner_frame.png"><img alt="../_images/banner_frame.png" class="align-center" src="../_images/banner_frame.png" style="width: 265.0px; height: 193.0px;" /></a>
+<p>Change the dimensions to match the EDM banner dimensions and X, Y location from the properties area on the right:</p>
+<a class="reference internal image-reference" href="../_images/pydm_banner_dimensions.png"><img alt="../_images/pydm_banner_dimensions.png" class="align-center" src="../_images/pydm_banner_dimensions.png" style="width: 437.0px; height: 249.0px;" /></a>
+<p>Let’s add a color: <strong>right click</strong> on the <code class="docutils literal notranslate"><span class="pre">QFrame</span></code> Widget, and choose <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">styleSheet..</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/banner_change_stylesheet.png"><img alt="../_images/banner_change_stylesheet.png" class="align-center" src="../_images/banner_change_stylesheet.png" style="width: 330.0px; height: 171.0px;" /></a>
+<p>From the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Color</span></code>, choose the down arrow button:</p>
+<a class="reference internal image-reference" href="../_images/banner_color.png"><img alt="../_images/banner_color.png" class="align-center" src="../_images/banner_color.png" style="width: 382.0px; height: 271.0px;" /></a>
+<p>Choose the <code class="docutils literal notranslate"><span class="pre">background-color</span></code> and the <code class="docutils literal notranslate"><span class="pre">border-color</span></code> one at the time to change the colors, you should see a window that displays the colors after selecting an option:</p>
+<a class="reference internal image-reference" href="../_images/colors.png"><img alt="../_images/colors.png" class="align-center" src="../_images/colors.png" style="width: 270.0px; height: 232.0px;" /></a>
+<p>Choose a color for each drop-down option you selected, and save it:</p>
+<a class="reference internal image-reference" href="../_images/save_banner_colors.png"><img alt="../_images/save_banner_colors.png" class="align-center" src="../_images/save_banner_colors.png" style="width: 399.0px; height: 186.0px;" /></a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We will get more into Stylesheets as we go through this walk-through, generally you want to have a <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file where you define the stylesheet for all the widgets and point PyDM to that file. For now, please know that the stylesheet changes made in QtDesigner will take precedence over what is defined in the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file.</p>
+</div>
+<p>Ideally, besides the default stylesheet that comes with PyDM, we could have a <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file per facility, where we can customize the stylesheet to be specific for that facility.
+One example of where this comes into play is the <code class="docutils literal notranslate"><span class="pre">banner</span></code> widget.</p>
+<p>Let’s say we want all the banners to have a certain color in one facility. In this case, instead of manually changing the colors for every screen banner from Qt Designer, we could define the banner color in a <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file and point PyDM to it:</p>
+<ul class="simple">
+<li><p>First we would have to give a good name to our banner object so we can later access this name when we create the sylesheet, from the properties change the <code class="docutils literal notranslate"><span class="pre">objectName</span></code> to something specific:</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/banner_top.PNG"><img alt="../_images/banner_top.PNG" class="align-center" src="../_images/banner_top.PNG" style="width: 628.0px; height: 171.0px;" /></a>
+<ul class="simple">
+<li><p>Next we want to create a simple <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file:</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/my_stylesheet_banner.PNG"><img alt="../_images/my_stylesheet_banner.PNG" class="align-center" src="../_images/my_stylesheet_banner.PNG" style="width: 468.0px; height: 196.0px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note in the stylesheet we only change the style for the QFrame which name is <code class="docutils literal notranslate"><span class="pre">banner_top</span></code>, so this won’t apply for any other frames that we have on our screen.</p>
+</div>
+<ul class="simple">
+<li><p>Now to make sure this works, let’s go back to the banner’s styleSheet, <strong>right click</strong> on the banner frame and choose <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">styleSheet...</span></code>, then select everything in there and hit <code class="docutils literal notranslate"><span class="pre">Delete</span></code> on your keyboard:</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/delete_stylesheet.PNG"><img alt="../_images/delete_stylesheet.PNG" class="align-center" src="../_images/delete_stylesheet.PNG" style="width: 485.0px; height: 311.0px;" /></a>
+<ul>
+<li><p>Save that, and now let’s try to open the screen with our <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file from your bash shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYDM_STYLESHEET_INCLUDE_DEFAULT</span><span class="o">=</span><span class="mi">1</span> <span class="n">pydm</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;DEV=MY_PV_HERE&quot;</span> <span class="o">--</span><span class="n">stylesheet</span> <span class="n">my_style</span><span class="o">.</span><span class="n">qss</span> <span class="n">mgnt_unit2</span><span class="o">.</span><span class="n">ui</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>We would get something similar to this:</p>
+<a class="reference internal image-reference" href="../_images/colored_banner.PNG"><img alt="../_images/colored_banner.PNG" class="align-center" src="../_images/colored_banner.PNG" style="width: 626.0px; height: 120.0px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We used the <code class="docutils literal notranslate"><span class="pre">PYDM_STYLESHEET_INCLUDE_DEFAULT=1</span></code> variable to include both, our customized stylesheet (<code class="docutils literal notranslate"><span class="pre">my_style.qss</span></code>) and the default one that comes with PyDM.</p>
+</div>
+</div>
+</div>
+<div class="section" id="static-text">
+<h2>Static Text<a class="headerlink" href="#static-text" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>EDM<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Static Text Example in EDM, looking at the <strong>Magnet Device Display</strong> text:</p>
+<a class="reference internal image-reference" href="../_images/edm_magnet_display_text.png"><img alt="../_images/edm_magnet_display_text.png" class="align-center" src="../_images/edm_magnet_display_text.png" style="width: 378.0px; height: 157.0px;" /></a>
+<p>Some of its properties:</p>
+<a class="reference internal image-reference" href="../_images/edm_magnet_display_properties.png"><img alt="../_images/edm_magnet_display_properties.png" class="align-center" src="../_images/edm_magnet_display_properties.png" style="width: 383.0px; height: 715.0px;" /></a>
+</div>
+<div class="section" id="pydm">
+<h3>PyDM<a class="headerlink" href="#pydm" title="Permalink to this headline">¶</a></h3>
+<p>For Static Text in PyDM use a <code class="docutils literal notranslate"><span class="pre">QLabel</span></code>.
+Drag and drop a QtLabel:</p>
+<a class="reference internal image-reference" href="../_images/qlabel.png"><img alt="../_images/qlabel.png" class="align-center" src="../_images/qlabel.png" style="width: 525.0px; height: 169.0px;" /></a>
+<p>Double click on the label to edit the text, or change it from the properties on the right:</p>
+<a class="reference internal image-reference" href="../_images/qlabel_text.PNG"><img alt="../_images/qlabel_text.PNG" class="align-center" src="../_images/qlabel_text.PNG" style="width: 503.0px; height: 112.0px;" /></a>
+<p>From properties on the left also change the dimensions as well as the position:</p>
+<a class="reference internal image-reference" href="../_images/qlabel_prop.png"><img alt="../_images/qlabel_prop.png" class="align-center" src="../_images/qlabel_prop.png" style="width: 297.0px; height: 209.0px;" /></a>
+<p>Scroll down in the properties area and change the <code class="docutils literal notranslate"><span class="pre">font</span></code> if you need/want to by clicking on the button next to font as highlighted in blue below.</p>
+<a class="reference internal image-reference" href="../_images/font.png"><img alt="../_images/font.png" class="align-center" src="../_images/font.png" style="width: 496.0px; height: 99.0px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might not find all the Fonts that we have in EDM, for simplicity, using the default one is best. Be aware that some fonts might be larger or smaller, and some adjustment of widgets’ dimensions might be needed because of that.</p>
+</div>
+<p>We’ll get a window where we can change more font-specific properties:</p>
+<a class="reference internal image-reference" href="../_images/font_prop.png"><img alt="../_images/font_prop.png" class="align-center" src="../_images/font_prop.png" style="width: 338.0px; height: 263.0px;" /></a>
+<p>By default, a <code class="docutils literal notranslate"><span class="pre">QLabel</span></code> will not have a background color so in this case we don’t need to worry about setting the background color to match the banner color (not yet at least), but if we need to add a color to the label widget we would follow the same steps as we did for the <code class="docutils literal notranslate"><span class="pre">QFrame</span></code>:
+<strong>Right click</strong> on the label, go to <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">styleSheet</span></code> and choose a background color for example:</p>
+<a class="reference internal image-reference" href="../_images/qlabel_color.png"><img alt="../_images/qlabel_color.png" class="align-center" src="../_images/qlabel_color.png" style="width: 416.0px; height: 193.0px;" /></a>
+</div>
+<div class="section" id="edm-static-text-with-macro">
+<h3>EDM - static text with Macro<a class="headerlink" href="#edm-static-text-with-macro" title="Permalink to this headline">¶</a></h3>
+<p>Notice the macro in this text: <code class="docutils literal notranslate"><span class="pre">$(DEV)</span></code></p>
+<a class="reference internal image-reference" href="../_images/edm_text_with_macro.png"><img alt="../_images/edm_text_with_macro.png" class="align-center" src="../_images/edm_text_with_macro.png" style="width: 420.0px; height: 377.0px;" /></a>
+</div>
+<div class="section" id="pydm-text-with-macro">
+<h3>PyDM - text with Macro<a class="headerlink" href="#pydm-text-with-macro" title="Permalink to this headline">¶</a></h3>
+<p>Drag and drop a <code class="docutils literal notranslate"><span class="pre">QLabel</span></code>, add a macro - <code class="docutils literal notranslate"><span class="pre">${DEV}</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/pydm_text_with_macro.png"><img alt="../_images/pydm_text_with_macro.png" class="align-center" src="../_images/pydm_text_with_macro.png" style="width: 504.0px; height: 251.0px;" /></a>
+</div>
+</div>
+<div class="section" id="text-control-non-editable">
+<h2>Text Control – Non-Editable<a class="headerlink" href="#text-control-non-editable" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>EDM<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Example of Control Text highlighted below in blue:</p>
+<a class="reference internal image-reference" href="../_images/edm_control_text_non.png"><img alt="../_images/edm_control_text_non.png" class="align-center" src="../_images/edm_control_text_non.png" style="width: 476.0px; height: 87.0px;" /></a>
+<p>Some properties:</p>
+<a class="reference internal image-reference" href="../_images/edm_control_text_prop.png"><img alt="../_images/edm_control_text_prop.png" class="align-center" src="../_images/edm_control_text_prop.png" style="width: 792.4px; height: 243.6px;" /></a>
+</div>
+<div class="section" id="id3">
+<h3>PyDM<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Use a <code class="docutils literal notranslate"><span class="pre">PyDMLabel</span></code> for a non-editable <strong>Control Text</strong> in PyDM. Drag and drop a <code class="docutils literal notranslate"><span class="pre">PyDMLabel</span></code>.
+Go through the same process as for a <strong>Static Text</strong> with changing the dimensions, position, and font (if needed).
+Expend the font to make it bold from the font down arrow properties:</p>
+<a class="reference internal image-reference" href="../_images/bold_font.png"><img alt="../_images/bold_font.png" class="align-center" src="../_images/bold_font.png" style="width: 510.0px; height: 160.0px;" /></a>
+<p>Note the extra properties of a <code class="docutils literal notranslate"><span class="pre">PyDMLabel</span></code> if you scroll all the way down in the properties area (compared to the <code class="docutils literal notranslate"><span class="pre">QLabel</span></code>).</p>
+<p>Most of the times you will leave default properties for these labels. Note the <code class="docutils literal notranslate"><span class="pre">channel</span></code> property – here is where you would insert a PV.</p>
+<a class="reference internal image-reference" href="../_images/pydmlabel_prop.png"><img alt="../_images/pydmlabel_prop.png" class="align-center" src="../_images/pydmlabel_prop.png" style="width: 517.0px; height: 361.0px;" /></a>
+<p>Let’s add a PV:</p>
+<a class="reference internal image-reference" href="../_images/add_pv.png"><img alt="../_images/add_pv.png" class="align-center" src="../_images/add_pv.png" style="width: 416.0px; height: 111.0px;" /></a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>PVs start with <code class="docutils literal notranslate"><span class="pre">ca://</span></code> in PyDM.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we don’t have Qt Designer set to be “Online” we will not see the PVs’ values in QtDesigner. To set the Qt Designer online we need to export this variable to 1:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PYDM_DESIGNER_ONLINE=1</span></code></p>
+</div></blockquote>
+</div>
+<p>The banner is done, please note that by default every screen in PyDM will come with similar buttons as in EDM, so there are no widgets for these:</p>
+<a class="reference internal image-reference" href="../_images/banner_buttons.png"><img alt="../_images/banner_buttons.png" class="align-center" src="../_images/banner_buttons.png" style="width: 1074.0px; height: 80.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/banner_done.PNG"><img alt="../_images/banner_done.PNG" class="align-center" src="../_images/banner_done.PNG" style="width: 914.0px; height: 135.0px;" /></a>
+<p>In PyDM all screens will have this set of menus:</p>
+<a class="reference internal image-reference" href="../_images/menu.png"><img alt="../_images/menu.png" class="align-center" src="../_images/menu.png" style="width: 770.6999999999999px; height: 94.5px;" /></a>
+<p>Click on <code class="docutils literal notranslate"><span class="pre">File</span></code> to get more options and find out more about PyDM:</p>
+<a class="reference internal image-reference" href="../_images/about_pydm.png"><img alt="../_images/about_pydm.png" class="align-center" src="../_images/about_pydm.png" style="width: 292.0px; height: 225.0px;" /></a>
+<p>Please explore the other menu information and options.</p>
+</div>
+</div>
+<div class="section" id="grouping-things-together">
+<h2>Grouping Things Together<a class="headerlink" href="#grouping-things-together" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>EDM<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>In this example EDM is using a <strong>Rectangle</strong> and a <strong>Static Text</strong> to form an area.</p>
+<a class="reference internal image-reference" href="../_images/edm_group_together.png"><img alt="../_images/edm_group_together.png" class="align-center" src="../_images/edm_group_together.png" style="width: 826.4000000000001px; height: 311.20000000000005px;" /></a>
+</div>
+<div class="section" id="id5">
+<h3>PyDM<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM there are multiple ways to go about grouping things together esthetically.
+You could use a <code class="docutils literal notranslate"><span class="pre">QLabel</span></code> and a <code class="docutils literal notranslate"><span class="pre">Frame</span></code> to imitate what we have in EDM, but for simplicity we’ll use a different widget called <code class="docutils literal notranslate"><span class="pre">QGroupBox</span></code> – this one already has a text in it and a shaded frame area by default:</p>
+<a class="reference internal image-reference" href="../_images/group_box.png"><img alt="../_images/group_box.png" class="align-center" src="../_images/group_box.png" style="width: 526.0px; height: 341.0px;" /></a>
+<p>Double click on the <code class="docutils literal notranslate"><span class="pre">GroupBox</span></code> text to change the text and change the dimensions from the properties on the right.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that when using the <code class="docutils literal notranslate"><span class="pre">QGroupBox</span></code> (or a <code class="docutils literal notranslate"><span class="pre">Frame</span></code>), the X and Y will reset to 0, 0 from the <code class="docutils literal notranslate"><span class="pre">QGroupBox</span></code>, so you’ll have to account for that when adding widgets in the box, if you don’t want to account for that and want to match the X and Y positions as close as possible to EDM’s widgets, add the <code class="docutils literal notranslate"><span class="pre">GroupBox</span></code> at the end after you are done adding the widgets.</p>
+</div>
+<p>For example if we wore to skip ahead and add a <code class="docutils literal notranslate"><span class="pre">QGroupBox</span></code> at the end, simply drag and drop a <code class="docutils literal notranslate"><span class="pre">GroupBox</span></code> on top of what you want to group (this is just an example):</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/group_with_group_box.PNG"><img alt="../_images/group_with_group_box.PNG" class="align-center" src="../_images/group_with_group_box.PNG" style="width: 507.0px; height: 241.0px;" /></a>
+<p>You can also <strong>right click</strong> on it and send it to back so you can access the widgets in it freely:</p>
+<a class="reference internal image-reference" href="../_images/send_to_back.PNG"><img alt="../_images/send_to_back.PNG" class="align-center" src="../_images/send_to_back.PNG" style="width: 622.0px; height: 440.0px;" /></a>
+<p>You can do a similar thing with a <code class="docutils literal notranslate"><span class="pre">Frame</span></code>, just drag and drop a <code class="docutils literal notranslate"><span class="pre">Frame</span></code> and stretch it so it covers the group area:</p>
+<a class="reference internal image-reference" href="../_images/group_with_frame.PNG"><img alt="../_images/group_with_frame.PNG" class="align-center" src="../_images/group_with_frame.PNG" style="width: 535.0px; height: 256.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="meter-widget">
+<h2>Meter Widget<a class="headerlink" href="#meter-widget" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>EDM<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/meter_widget.png"><img alt="../_images/meter_widget.png" class="align-center" src="../_images/meter_widget.png" style="width: 740.8000000000001px; height: 653.6px;" /></a>
+</div>
+<div class="section" id="id7">
+<h3>PyDM:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we do not have a <code class="docutils literal notranslate"><span class="pre">Meter</span></code> Widget - we have a similar widget we can use, but the design is a bit different, in the sense that it is not circular, here we can use a <code class="docutils literal notranslate"><span class="pre">PyDMScaleIndicator</span></code> widget:</p>
+<a class="reference internal image-reference" href="../_images/scale_indicator.png"><img alt="../_images/scale_indicator.png" class="align-center" src="../_images/scale_indicator.png" style="width: 681.6px; height: 220.8px;" /></a>
+<p>Change the dimensions and properties as we previously did with other widgets, add PV:</p>
+<a class="reference internal image-reference" href="../_images/scale_indicator_pv.png"><img alt="../_images/scale_indicator_pv.png" class="align-center" src="../_images/scale_indicator_pv.png" style="width: 649.0px; height: 154.0px;" /></a>
+<p>Take off the <code class="docutils literal notranslate"><span class="pre">precisionFromPV</span></code> option and add a precision value of 2:</p>
+<a class="reference internal image-reference" href="../_images/scale_indicator_precision.png"><img alt="../_images/scale_indicator_precision.png" class="align-center" src="../_images/scale_indicator_precision.png" style="width: 649.0px; height: 173.0px;" /></a>
+<p>Change the color of the indicator if desired:</p>
+<a class="reference internal image-reference" href="../_images/scale_indicator_color.png"><img alt="../_images/scale_indicator_color.png" class="align-center" src="../_images/scale_indicator_color.png" style="width: 764.0px; height: 124.0px;" /></a>
+<p>You can also get a feel of how it would look in <code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Mode</span></code>, go to <code class="docutils literal notranslate"><span class="pre">Form</span></code> and select <code class="docutils literal notranslate"><span class="pre">Preview</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/preview_mode.png"><img alt="../_images/preview_mode.png" class="align-center" src="../_images/preview_mode.png" style="width: 481.0px; height: 327.0px;" /></a>
+<p>Now if you like how it looks, you can copy and paste it to get the second one.
+Select the widget, <code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code> to copy it, and <code class="docutils literal notranslate"><span class="pre">Ctrl+v</span></code> to paste it. You will have to adjust the position for the second one and change the PV.</p>
+<p>Note that this widget does not have a label, so let’s add a simple <code class="docutils literal notranslate"><span class="pre">QLabel</span></code>. Place a label right below the widget and make sure it has the same width, as well as it starts at the same X as the scale widget, and at Y + height of scaleIndicator for Y position:</p>
+<a class="reference internal image-reference" href="../_images/scale_indicator_label.png"><img alt="../_images/scale_indicator_label.png" class="align-center" src="../_images/scale_indicator_label.png" style="width: 194.0px; height: 145.0px;" /></a>
+<p>Additionally, you can give both these widgets a background color if wanted - to look like they are part of one widget (simulating EDM), just right click on the widget and select <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">stylesheet</span></code> to add a <code class="docutils literal notranslate"><span class="pre">background-color</span></code> and a <code class="docutils literal notranslate"><span class="pre">border-color</span></code> for both. Here is how they would approximately look:</p>
+<a class="reference internal image-reference" href="../_images/scale_indicator_grey.png"><img alt="../_images/scale_indicator_grey.png" class="align-center" src="../_images/scale_indicator_grey.png" style="width: 416.0px; height: 207.0px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can choose a color by picking directly one around your work area by selecting the <code class="docutils literal notranslate"><span class="pre">Pick</span> <span class="pre">Screen</span> <span class="pre">Color</span></code>. This is useful when you don’t remember what color you used previously but want them to match with a color you already chose previously - see below:</p>
+</div>
+<a class="reference internal image-reference" href="../_images/pick_screen_color.png"><img alt="../_images/pick_screen_color.png" class="align-center" src="../_images/pick_screen_color.png" style="width: 563.0px; height: 483.0px;" /></a>
+</div>
+</div>
+<div class="section" id="text-control-editable-motif-widget">
+<h2>Text Control – Editable- Motif Widget<a class="headerlink" href="#text-control-editable-motif-widget" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>EDM<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Proceeding with the next section on our screen, we have a widget <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">Control</span></code> that is in <code class="docutils literal notranslate"><span class="pre">Editable</span></code> mode highlighted in blue below:</p>
+<a class="reference internal image-reference" href="../_images/control_text_editable.png"><img alt="../_images/control_text_editable.png" class="align-center" src="../_images/control_text_editable.png" style="width: 953.0px; height: 258.0px;" /></a>
+</div>
+<div class="section" id="id9">
+<h3>PyDM<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM, we use a <code class="docutils literal notranslate"><span class="pre">PyDMLineEdit</span></code> for a <strong>Text Control</strong> that is <strong>Editable</strong> (you can write in it):</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edit_line.png"><img alt="../_images/edit_line.png" class="align-center" src="../_images/edit_line.png" style="width: 655.2px; height: 200.8px;" /></a>
+</div></blockquote>
+<p>It will have similar and additional properties as a <code class="docutils literal notranslate"><span class="pre">PyDMLabel</span></code>.</p>
+<ul class="simple">
+<li><p>Note how I added the the other labels, we already covered those labels in this walk-through above. If you need to change one thing for multiple widgets of the same type, you can select all of them (mouse drag or Ctrl+left click) and change it for all at once, for example I took out the <code class="docutils literal notranslate"><span class="pre">alarmSensitiveBorder</span></code> property Off from the EGU labels:</p></li>
+</ul>
+<p>Select all those labels (<code class="docutils literal notranslate"><span class="pre">Ctrl+right</span> <span class="pre">click</span></code> on the widget):</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/egu_labels.png"><img alt="../_images/egu_labels.png" class="align-center" src="../_images/egu_labels.png" style="width: 410.0px; height: 209.0px;" /></a>
+</div></blockquote>
+<p>Uncheck the <code class="docutils literal notranslate"><span class="pre">alarmSensitiveBorder</span></code> box, unchecking only once will uncheck for all those selected widgets:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/uncheck.png"><img alt="../_images/uncheck.png" class="align-center" src="../_images/uncheck.png" style="width: 516.0px; height: 221.0px;" /></a>
+</div></blockquote>
+<p>One thing that I also had to go back and do was to change the <strong>Display Format</strong> for some label widgets, you can do it by selecting multiple widgets again and change the property of the <code class="docutils literal notranslate"><span class="pre">dispalyFormat</span></code> to what the EDMs are - in this case I changed them from <em>Default</em> to <em>String</em>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/display_format.png"><img alt="../_images/display_format.png" class="align-center" src="../_images/display_format.png" style="width: 543.0px; height: 82.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="related-display">
+<h2>Related Display<a class="headerlink" href="#related-display" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>EDM<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Continuing with the next section in the screen we have a new widget that we have not covered here yet - the <strong>Related Display</strong>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_related_display.png"><img alt="../_images/edm_related_display.png" class="align-center" src="../_images/edm_related_display.png" style="width: 657.6px; height: 379.20000000000005px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id11">
+<h3>PyDM<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we have a <strong>Related Display</strong> widget called <code class="docutils literal notranslate"><span class="pre">PyDMRelatedDisplayButoon</span></code> – this is a button to open another <strong>PyDM</strong> Display.</p>
+<p>In addition to this we also have the <code class="docutils literal notranslate"><span class="pre">PyDMEDMDisplayButton</span></code> – this is a button to open an <strong>EDM</strong> screen.</p>
+<p>In this case, we want to open existing <code class="docutils literal notranslate"><span class="pre">.edl</span></code> screens so we will choose the second option:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/pydm_related_display.png"><img alt="../_images/pydm_related_display.png" class="align-center" src="../_images/pydm_related_display.png" style="width: 518.4px; height: 253.60000000000002px;" /></a>
+</div></blockquote>
+<p>From the related button properties, we can add the name to be displayed on the button under the text area:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/related_name.png"><img alt="../_images/related_name.png" class="align-center" src="../_images/related_name.png" style="width: 525.0px; height: 107.0px;" /></a>
+</div></blockquote>
+<p>We can add the filename we want to open, under the <code class="docutils literal notranslate"><span class="pre">filenames</span></code> click on <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">String</span> <span class="pre">List</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/related_filename.png"><img alt="../_images/related_filename.png" class="align-center" src="../_images/related_filename.png" style="width: 475.0px; height: 157.0px;" /></a>
+</div></blockquote>
+<p>Click on <code class="docutils literal notranslate"><span class="pre">New</span></code> to add a file and type the file name in the <code class="docutils literal notranslate"><span class="pre">Value</span></code> section:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/related_dialog.png"><img alt="../_images/related_dialog.png" class="align-center" src="../_images/related_dialog.png" style="width: 437.0px; height: 328.0px;" /></a>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note you have to write the path to this file relative to your current screen.</p>
+</div>
+<p>We can also define the related display file’s macros:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/related_macros.png"><img alt="../_images/related_macros.png" class="align-center" src="../_images/related_macros.png" style="width: 730.4000000000001px; height: 276.0px;" /></a>
+</div></blockquote>
+<p>Check the <code class="docutils literal notranslate"><span class="pre">openInNewWindow</span></code> option to open the file in a new window:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/related_new_window.png"><img alt="../_images/related_new_window.png" class="align-center" src="../_images/related_new_window.png" style="width: 395.20000000000005px; height: 120.80000000000001px;" /></a>
+</div></blockquote>
+<p>Again, as previously mentioned, when we have multiple widgets of the same type and you want to check a box or write the same macros for example, just select all of them and do it all at the same time by writing it only in one spot.</p>
+</div>
+</div>
+<div class="section" id="slider">
+<h2>Slider<a class="headerlink" href="#slider" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>EDM<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>In the next section we meet a new widget that we have not discussed previously, the <code class="docutils literal notranslate"><span class="pre">Motif</span> <span class="pre">Slider</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/motif_slider.png"><img alt="../_images/motif_slider.png" class="align-center" src="../_images/motif_slider.png" style="width: 711.2px; height: 376.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id13">
+<h3>PyDM<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we have a similar widget called <code class="docutils literal notranslate"><span class="pre">PyDMSlider</span></code> – drag and drop one in the new <code class="docutils literal notranslate"><span class="pre">QControlBox</span></code> (note we created a new QControlBox rather than doing that at the end as explained previously):</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/slider.png"><img alt="../_images/slider.png" class="align-center" src="../_images/slider.png" style="width: 775.0px; height: 261.0px;" /></a>
+</div></blockquote>
+<p>Let’s adjust some properties, let’s change precision to 4 and take out the <code class="docutils literal notranslate"><span class="pre">precisionFromPV</span></code>, aslo let’s add a <code class="docutils literal notranslate"><span class="pre">channel</span></code> PV:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/slider_prop.png"><img alt="../_images/slider_prop.png" class="align-center" src="../_images/slider_prop.png" style="width: 416.0px; height: 181.0px;" /></a>
+</div></blockquote>
+<p>Let’s also add a label on top of this widget to imitate what we have in EDM:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/slider_label.png"><img alt="../_images/slider_label.png" class="align-center" src="../_images/slider_label.png" style="width: 264.0px; height: 119.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="message-button-push-button">
+<h2>Message Button - Push Button<a class="headerlink" href="#message-button-push-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>EDM<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>The Message Button in EDM:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_push_button.png"><img alt="../_images/edm_push_button.png" class="align-center" src="../_images/edm_push_button.png" style="width: 450.0px; height: 148.0px;" /></a>
+</div></blockquote>
+<p>Properties.</p>
+<p>Notice here the Visibility PV:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_push_button_prop.png"><img alt="../_images/edm_push_button_prop.png" class="align-center" src="../_images/edm_push_button_prop.png" style="width: 612.0px; height: 386.40000000000003px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id15">
+<h3>PyDM<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we would use a <code class="docutils literal notranslate"><span class="pre">PyDMPushButton</span></code> for this type of widget:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/pydm_push_button.PNG"><img alt="../_images/pydm_push_button.PNG" class="align-center" src="../_images/pydm_push_button.PNG" style="width: 614.7px; height: 266.40000000000003px;" /></a>
+</div></blockquote>
+<p>In our case we might want to change a few main properties like: <strong>text</strong>, <strong>channel</strong>, <strong>pressValue</strong>, <strong>releaseValue</strong>, and maybe others.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/push_button_prop.png"><img alt="../_images/push_button_prop.png" class="align-center" src="../_images/push_button_prop.png" style="width: 472.5px; height: 513.0px;" /></a>
+</div></blockquote>
+<p>For the <strong>Visibility PV</strong> we would handle it this way in PyDM - <strong>Right click</strong> on the widget and select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Rule</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edit_rules.png"><img alt="../_images/edit_rules.png" class="align-center" src="../_images/edit_rules.png" style="width: 524.0px; height: 95.0px;" /></a>
+</div></blockquote>
+<p>You will get a new little window where you will need to:</p>
+<ul class="simple">
+<li><p>click on Add Rule</p></li>
+<li><p>give it a Rule name</p></li>
+<li><p>add the channel PV</p></li>
+<li><p>define the condition</p></li>
+</ul>
+<p>If you look at the EDM condition, it says <strong>Not Visible</strong> if the PV <cite>value &gt;= 1 and &lt; 2</cite>.
+We will have to modify the condition to be <code class="docutils literal notranslate"><span class="pre">true</span></code> for <strong>Visible if</strong> instead:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/rule.png"><img alt="../_images/rule.png" class="align-center" src="../_images/rule.png" style="width: 416.0px; height: 227.0px;" /></a>
+</div></blockquote>
+<p>Save it when you are ready.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the 3 buttons I applied the same rule, so I was able to select all three buttons and just type the rule ones – this was applied for all 3.</p>
+</div>
+</div>
+</div>
+<div class="section" id="menu-button">
+<h2>Menu Button<a class="headerlink" href="#menu-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h3>EDM<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>The next widget we’re going to look at is a <strong>Menu Button</strong>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/menu_button.png"><img alt="../_images/menu_button.png" class="align-center" src="../_images/menu_button.png" style="width: 524.8000000000001px; height: 557.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id17">
+<h3>PyDM<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we handle this with the <code class="docutils literal notranslate"><span class="pre">PyDMEnumComboBox</span></code> widget:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/enum_combo_box.PNG"><img alt="../_images/enum_combo_box.PNG" class="align-center" src="../_images/enum_combo_box.PNG" style="width: 662.0px; height: 393.0px;" /></a>
+</div></blockquote>
+<p>Let’s inspect the properties on the right:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/enum_combo_box_prop.png"><img alt="../_images/enum_combo_box_prop.png" class="align-center" src="../_images/enum_combo_box_prop.png" style="width: 398.0px; height: 367.0px;" /></a>
+</div></blockquote>
+<p>Take the <code class="docutils literal notranslate"><span class="pre">alarmSensitiveBorder</span></code> off here, and add a <code class="docutils literal notranslate"><span class="pre">channel</span></code> PV:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/enum_button_channel.png"><img alt="../_images/enum_button_channel.png" class="align-center" src="../_images/enum_button_channel.png" style="width: 686.0px; height: 206.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="horizontal-bar">
+<h2>Horizontal Bar<a class="headerlink" href="#horizontal-bar" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>EDM<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p><strong>Horizontal Bar</strong> in EDM and its properties:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/horizontal_bar.png"><img alt="../_images/horizontal_bar.png" class="align-center" src="../_images/horizontal_bar.png" style="width: 391.0px; height: 898.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id19">
+<h3>PyDM<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we can use the <code class="docutils literal notranslate"><span class="pre">PyDMScaleIndicator</span></code> for this type of widget:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/scale_indicator.png"><img alt="../_images/scale_indicator.png" class="align-center" src="../_images/scale_indicator.png" style="width: 681.6px; height: 220.8px;" /></a>
+</div></blockquote>
+<p>Note, we should check the <code class="docutils literal notranslate"><span class="pre">barIndicator</span></code> for it to look like a progress bar, Also, we can change the <code class="docutils literal notranslate"><span class="pre">indicatorColor</span></code> to be green, and take the <code class="docutils literal notranslate"><span class="pre">showTicks</span></code> off:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/bar_indicator.png"><img alt="../_images/bar_indicator.png" class="align-center" src="../_images/bar_indicator.png" style="width: 518.0px; height: 317.0px;" /></a>
+</div></blockquote>
+<p>By default this scale indicator will be horizontal, but we can change the <code class="docutils literal notranslate"><span class="pre">orientation</span></code> to <strong>Vertical</strong> if we need to.</p>
+<p>We can also take the <code class="docutils literal notranslate"><span class="pre">showLimits</span></code> off to be more consistent with the EDM widget, as well as <code class="docutils literal notranslate"><span class="pre">showValue</span></code> off, and let’s also check the <code class="docutils literal notranslate"><span class="pre">originAtZero</span></code> box:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/bar_prop.png"><img alt="../_images/bar_prop.png" class="align-center" src="../_images/bar_prop.png" style="width: 525.0px; height: 232.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Qt Designer it will not show the green progress indicator unless we are reading that PV and it has a value in it.</p>
+</div>
+<p>Let’s also add a label:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/bar_label.png"><img alt="../_images/bar_label.png" class="align-center" src="../_images/bar_label.png" style="width: 525.0px; height: 169.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="choice-button">
+<h2>Choice Button<a class="headerlink" href="#choice-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="emd">
+<h3>EMD<a class="headerlink" href="#emd" title="Permalink to this headline">¶</a></h3>
+<p><strong>Choice button</strong> in EDM in Edit mode:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_choice_edit.png"><img alt="../_images/edm_choice_edit.png" class="align-center" src="../_images/edm_choice_edit.png" style="width: 240.0px; height: 139.0px;" /></a>
+</div></blockquote>
+<p><strong>Choice button</strong> in EDM in Exec mode:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_choice_exec.png"><img alt="../_images/edm_choice_exec.png" class="align-center" src="../_images/edm_choice_exec.png" style="width: 232.0px; height: 107.0px;" /></a>
+</div></blockquote>
+<p>Properties:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/choice_prop.png"><img alt="../_images/choice_prop.png" class="align-center" src="../_images/choice_prop.png" style="width: 332.0px; height: 585.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id20">
+<h3>PyDM<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we would use a <code class="docutils literal notranslate"><span class="pre">PyDMEnumButton</span></code> for this widget:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/enum_button.PNG"><img alt="../_images/enum_button.PNG" class="align-center" src="../_images/enum_button.PNG" style="width: 687.0px; height: 417.0px;" /></a>
+</div></blockquote>
+<p>Properties - please note that besides changing the width and height, we should take off the <code class="docutils literal notranslate"><span class="pre">alarmSensitiveBorder</span></code>, insert the channel, change the <code class="docutils literal notranslate"><span class="pre">orientation</span></code> to <strong>Horizontal</strong>, and set the <strong>margins</strong> settings all to 2 so there is little space between the buttons – imitating the EDM widget:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/enum_prop.png"><img alt="../_images/enum_prop.png" class="align-center" src="../_images/enum_prop.png" style="width: 525.0px; height: 445.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="rectangles-frames">
+<h2>Rectangles - Frames<a class="headerlink" href="#rectangles-frames" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>EDM<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>In EDM we have rectangles that let us visually separate sections:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_rectangle.png"><img alt="../_images/edm_rectangle.png" class="align-center" src="../_images/edm_rectangle.png" style="width: 378.0px; height: 325.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id22">
+<h3>PyDM<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we can accomplish the same thing with a <code class="docutils literal notranslate"><span class="pre">QFrame</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/frame.png"><img alt="../_images/frame.png" class="align-center" src="../_images/frame.png" style="width: 686.0px; height: 411.0px;" /></a>
+</div></blockquote>
+<p>Adjust the width and height and copy and paste the frame to reuse it.
+You can also change the style of these frames by choosing a different <code class="docutils literal notranslate"><span class="pre">frameShape</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/frame_shape.png"><img alt="../_images/frame_shape.png" class="align-center" src="../_images/frame_shape.png" style="width: 399.0px; height: 192.0px;" /></a>
+</div></blockquote>
+<p>Here we chose a <code class="docutils literal notranslate"><span class="pre">Box</span></code> and also set the <code class="docutils literal notranslate"><span class="pre">frameShodow</span></code> to <strong>Plain</strong> and <code class="docutils literal notranslate"><span class="pre">lineWidgth</span></code> to 2:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/frame_prop.png"><img alt="../_images/frame_prop.png" class="align-center" src="../_images/frame_prop.png" style="width: 386.0px; height: 105.0px;" /></a>
+</div></blockquote>
+<p>This is approximately how it will look:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/frames.png"><img alt="../_images/frames.png" class="align-center" src="../_images/frames.png" style="width: 282.0px; height: 152.0px;" /></a>
+</div></blockquote>
+<p>We can also take a different approach here, and instead of creating three boxes, we could create one and add some horizontal lines, and from the properties give them different thickness to be more pronounced if needed.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/horizontal_line.PNG"><img alt="../_images/horizontal_line.PNG" class="align-center" src="../_images/horizontal_line.PNG" style="width: 920.0px; height: 256.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="radio-button">
+<h2>Radio Button<a class="headerlink" href="#radio-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id23">
+<h3>EDM<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p><strong>Radio Button</strong> in EDM:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_radio_button.png"><img alt="../_images/edm_radio_button.png" class="align-center" src="../_images/edm_radio_button.png" style="width: 198.0px; height: 87.0px;" /></a>
+</div></blockquote>
+<p>Note if more widgets are in a <strong>Group Box</strong>, you’ll have to middle click and select <code class="docutils literal notranslate"><span class="pre">Ungroup</span></code> for all the groups until you get to the <code class="docutils literal notranslate"><span class="pre">Radio</span> <span class="pre">Box</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_group_box.png"><img alt="../_images/edm_group_box.png" class="align-center" src="../_images/edm_group_box.png" style="width: 274.0px; height: 267.0px;" /></a>
+</div></blockquote>
+<p>Properties of the <code class="docutils literal notranslate"><span class="pre">Radio</span> <span class="pre">Box</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/radio_box_prop.png"><img alt="../_images/radio_box_prop.png" class="align-center" src="../_images/radio_box_prop.png" style="width: 298.0px; height: 359.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id24">
+<h3>PyDM<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>In PyDM we will use a <code class="docutils literal notranslate"><span class="pre">PyDMEnumButton</span></code> for this widget as well:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/enum_button.PNG"><img alt="../_images/enum_button.PNG" class="align-center" src="../_images/enum_button.PNG" style="width: 687.0px; height: 417.0px;" /></a>
+</div></blockquote>
+<p>Set the <cite>widgetType</cite> to <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/radio_button.png"><img alt="../_images/radio_button.png" class="align-center" src="../_images/radio_button.png" style="width: 484.0px; height: 99.0px;" /></a>
+</div></blockquote>
+<p>Also change the margins from 9 to probably a smaller value, except you want to have some distance vertically between them, so leave the <code class="docutils literal notranslate"><span class="pre">verticalSpacing</span></code> to 9.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/vertical_space.png"><img alt="../_images/vertical_space.png" class="align-center" src="../_images/vertical_space.png" style="width: 336.0px; height: 52.0px;" /></a>
+</div></blockquote>
+<p>Besides inserting the channels, some of these radio buttons have a rule - to be invisible when a condition is met, so let’s select all the widgets that will have this rule (the rule is the same for all in this case) and add it in:
+Select all radio button widgets that will have the rule. You can select them with holding down <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> and clicking on the widget with the mouse:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/radio_button_rule.png"><img alt="../_images/radio_button_rule.png" class="align-center" src="../_images/radio_button_rule.png" style="width: 376.0px; height: 212.0px;" /></a>
+</div></blockquote>
+<p>Add the rule by right clicking and choosing Edit Rule:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/radio_button_add_rule.png"><img alt="../_images/radio_button_add_rule.png" class="align-center" src="../_images/radio_button_add_rule.png" style="width: 440.0px; height: 246.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="embeded-display">
+<h2>Embeded Display<a class="headerlink" href="#embeded-display" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id25">
+<h3>EDM<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>The last portion on this screen that we have not covered yet is the <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Display</span></code>, looking at the properties, we see that this embedded display is opening a file highlighted below:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/embeded_widndow.PNG"><img alt="../_images/embeded_widndow.PNG" class="align-center" src="../_images/embeded_widndow.PNG" style="width: 506.0px; height: 756.0px;" /></a>
+</div></blockquote>
+<p>Notice that we’re using a macro here <code class="docutils literal notranslate"><span class="pre">$(DISP)</span></code> - if you are unsure of what this macro represents and you have to specify that in a <code class="docutils literal notranslate"><span class="pre">PyDM</span></code> embedded display, you can see the macros by right-clicking on the widget, and choose <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Macros</span></code></p>
+<p>Also, if we need to investigate the <code class="docutils literal notranslate"><span class="pre">Related</span> <span class="pre">Display</span> <span class="pre">Buttons</span></code> a little further, we could open the actual edm screen from the terminal and look at the properties of those buttons:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">edm</span> <span class="n">mgnt_unit_epcs</span><span class="o">.</span><span class="n">edl</span>
+</pre></div>
+</div>
+<p>This will open the following window in <code class="docutils literal notranslate"><span class="pre">Edit</span></code> mode, so we can click on each widget to see their properties:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/open_edl_screen.PNG"><img alt="../_images/open_edl_screen.PNG" class="align-center" src="../_images/open_edl_screen.PNG" style="width: 1116.5px; height: 207.89999999999998px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id26">
+<h3>PyDM<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">PyDM</span></code> we’ll have to create that file first. Go to <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span></code> and create a new <code class="docutils literal notranslate"><span class="pre">Widget</span></code>, set the width and height to correspond to the ones seen in the EDM Embedded Display properties.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/new_file.PNG"><img alt="../_images/new_file.PNG" class="align-center" src="../_images/new_file.PNG" style="width: 900.9px; height: 132.29999999999998px;" /></a>
+</div></blockquote>
+<p>Notice that in the EDM Embedded Display we have 4 <strong>Related Display Buttons</strong>, let’s recreate them in <code class="docutils literal notranslate"><span class="pre">PyDM</span></code>. We’ll be using a widget we already covered previously - the <code class="docutils literal notranslate"><span class="pre">PyDMEDMDisplayButton</span></code> to open existing edm displays, thus we will not go into too many details here.
+Open the displays by clicking on the EDM buttons (from the EDM screen) to see what files we need to open with the Related Display widgets by looking at the <code class="docutils literal notranslate"><span class="pre">Toggle</span> <span class="pre">Path</span></code> option as previously explained, so we can add those file names and their paths to our <code class="docutils literal notranslate"><span class="pre">PyDMEDMDisplayButton</span></code> widgets.</p>
+<p>Add their file names:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_display_buttons.PNG"><img alt="../_images/edm_display_buttons.PNG" class="align-center" src="../_images/edm_display_buttons.PNG" style="width: 532.8px; height: 259.8px;" /></a>
+</div></blockquote>
+<p>Preview:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/epsc_file.PNG"><img alt="../_images/epsc_file.PNG" class="align-center" src="../_images/epsc_file.PNG" style="width: 531.0px; height: 54.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you check the <code class="docutils literal notranslate"><span class="pre">openInNewWindow</span></code> option for each button!</p>
+</div>
+<p>Now that we have this file created, let’s go back to our main screen and add a <code class="docutils literal notranslate"><span class="pre">PyDmEmbeddedDisplay</span></code> widget:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/pydm_embeded_display.PNG"><img alt="../_images/pydm_embeded_display.PNG" class="align-center" src="../_images/pydm_embeded_display.PNG" style="width: 876.0px; height: 117.0px;" /></a>
+</div></blockquote>
+<p>Let’s add the file name that we just created, and because they are in the same folder, no additional paths need to be included in the <code class="docutils literal notranslate"><span class="pre">filename</span></code> properties, only the file name itself.</p>
+<p>You’ll notice that as soon as you add the filename the display we created previously will appear  on the main screen:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/embeded_display.PNG"><img alt="../_images/embeded_display.PNG" class="align-center" src="../_images/embeded_display.PNG" style="width: 975.5999999999999px; height: 160.2px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the display is not showing up, make sure the path of the file relative to the current screen is correct!</p>
+</div>
+<p>This concludes all the widgets on this screen - go to the next section for some touch up and stylesheets!! And this is approximately  how it looks now:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/approximate.PNG"><img alt="../_images/approximate.PNG" class="align-center" src="../_images/approximate.PNG" style="width: 543.6px; height: 486.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some of the widgets are disabled because we only have Write-Only access.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="stylesheets.html" class="btn btn-neutral float-right" title="Touch Up and Stylesheets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="start_with_qdesigner.html" class="btn btn-neutral float-left" title="Start with Qt Designer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, mgibbs, hhslepicka.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

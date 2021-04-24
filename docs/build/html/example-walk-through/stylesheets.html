@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Touch Up and Stylesheets &mdash; EDM to PyDM Migration Guide 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Help With PyDM" href="../contrib/help.html" />
+    <link rel="prev" title="Convert an Existing EDM Screen to a PyDM Screen" href="convert_existing_edm.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> EDM to PyDM Migration Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/colorPV.html">colorPV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/visibilityPV.html">visibilityPV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Example Run Non-Layout Mode</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start_with_qdesigner.html">Start with Qt Designer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convert_existing_edm.html">Convert an Existing EDM Screen to a PyDM Screen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Touch Up and Stylesheets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#more-about-stylesheets">More about Stylesheets</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/help.html">Getting Help With PyDM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/requests.html">Bug and Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab/pydm">PyDM GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://controlssoftware.sns.ornl.gov/edm">EDM Website</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">EDM to PyDM Migration Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Touch Up and Stylesheets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/example-walk-through/stylesheets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="touch-up-and-stylesheets">
+<h1>Touch Up and Stylesheets<a class="headerlink" href="#touch-up-and-stylesheets" title="Permalink to this headline">¶</a></h1>
+<p>Let’s now do some touch up to make it more similar to the EDM screen. One of the ways we already discussed about is the use of an additional stylesheet besides the <strong>default</strong> one we already have with <code class="docutils literal notranslate"><span class="pre">PyDM</span></code>.</p>
+<div class="section" id="more-about-stylesheets">
+<h2>More about Stylesheets<a class="headerlink" href="#more-about-stylesheets" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned priviously, besides changing the stylesheet for individual widgets, we could create a <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file with desired stylesheet properties and this can be applied for the entire screen.</p>
+<p>There are many examples and a great amount of information online about different styles for different widgets. Whenever you want to change a style of a widget, you can simply search for <strong>QT Stylesheet for … PushButton</strong> for example and you can copy and paste those styles thay you find online into your own <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file.
+There are also free downloadable <code class="docutils literal notranslate"><span class="pre">.qss</span></code> files that others have created, with different themes.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file that we previously created, let’s add some more styles for the following widgets. Please note that these are very basic styles that try to simulate a bit the EDM style:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PyDMPushButton</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QPushButton</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">218</span><span class="p">,</span> <span class="mi">218</span><span class="p">,</span> <span class="mi">218</span><span class="p">);</span>
+        <span class="n">border</span><span class="p">:</span> <span class="mi">2</span><span class="n">px</span> <span class="n">outset</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">);</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">radius</span><span class="p">:</span> <span class="mi">5</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">QPushButton</span><span class="p">:</span><span class="n">pressed</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">199</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">199</span><span class="p">);</span>
+        <span class="n">border</span><span class="p">:</span> <span class="mi">2</span><span class="n">px</span> <span class="n">inset</span>  <span class="n">rgb</span><span class="p">(</span><span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">QPushButton</span><span class="p">:</span><span class="n">hover</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span><span class="n">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">QPushButton</span><span class="p">:</span><span class="n">checked</span><span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">199</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">199</span><span class="p">);</span>
+        <span class="n">border</span><span class="p">:</span> <span class="mi">2</span><span class="n">px</span> <span class="n">inset</span>  <span class="n">rgb</span><span class="p">(</span><span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PyDMLabel</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PyDMLabel</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">214</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">214</span><span class="p">);</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">radius</span><span class="p">:</span> <span class="mi">3</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PyDMLineEdit</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QLineEdit</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">204</span><span class="p">);</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">156</span><span class="p">);</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">style</span><span class="p">:</span> <span class="n">inset</span><span class="p">;</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">width</span><span class="p">:</span> <span class="mi">2</span><span class="n">px</span> <span class="mi">1</span><span class="n">px</span> <span class="mi">1</span><span class="n">px</span> <span class="mi">2</span><span class="n">px</span><span class="p">;</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">radius</span><span class="p">:</span> <span class="mi">3</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">QLineEdit</span><span class="p">:</span><span class="n">hover</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">186</span><span class="p">,</span> <span class="mi">186</span><span class="p">,</span> <span class="mi">186</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QComboBox</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QGroupBox</span> <span class="p">{</span>
+        <span class="n">border</span><span class="o">-</span><span class="n">radius</span><span class="p">:</span> <span class="mi">5</span><span class="n">px</span><span class="p">;</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+        <span class="n">margin</span><span class="o">-</span><span class="n">top</span><span class="p">:</span> <span class="mi">15</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">QGroupBox</span><span class="p">::</span><span class="n">title</span> <span class="p">{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can download the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file that we developed in this walk-through from <a class="reference download internal" download="" href="../_downloads/3c4d444d8166839f73d4b3d7134a5691/my_style.qss"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">link</span></code></a></p>
+</div>
+<p>Now let’s try to open our display with this stylesheet again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYDM_STYLESHEET_INCLUDE_DEFAULT</span><span class="o">=</span><span class="mi">1</span> <span class="n">pydm</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;DEV=MY:PV:HERE&quot;</span> <span class="o">--</span><span class="n">stylesheet</span> <span class="n">my_style</span><span class="o">.</span><span class="n">qss</span> <span class="n">mgnt_unit2</span><span class="o">.</span><span class="n">ui</span>
+</pre></div>
+</div>
+<p>We should get something like this:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/with_stylesheet.PNG"><img alt="../_images/with_stylesheet.PNG" class="align-center" src="../_images/with_stylesheet.PNG" style="width: 545.4px; height: 484.79999999999995px;" /></a>
+</div></blockquote>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">PyDMLabel</span></code> from the top-left corner now has a background color - let’s go back and change the color to match the banner color.</p>
+<p>Before we do that, here is a trick we can use to make it easier on us in <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code>:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Let’s add the information from our <cite>.qss</cite> file, into the main <cite>Form</cite> from our screen - this way we’ll have the same styles while working in <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code>. By adding them to the <code class="docutils literal notranslate"><span class="pre">Form</span></code> they will be applied to all the widgets, as the <code class="docutils literal notranslate"><span class="pre">Form</span></code> is the Top Level containing all the widgets:</p>
+</div>
+<ul class="simple">
+<li><p>Right click on the <code class="docutils literal notranslate"><span class="pre">Form</span></code> from the right side of the <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code> under the <code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">Inspector</span></code> section above, and select <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">styleSheet..</span></code>:</p></li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/object_inspector.png"><img alt="../_images/object_inspector.png" class="align-center" src="../_images/object_inspector.png" style="width: 411.20000000000005px; height: 567.2px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li><p>Copy and paste all the information from our <code class="docutils literal notranslate"><span class="pre">my_style.qss</span></code> file in here:</p></li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/stylesheet_in_designer.PNG"><img alt="../_images/stylesheet_in_designer.PNG" class="align-center" src="../_images/stylesheet_in_designer.PNG" style="width: 681.6px; height: 507.20000000000005px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Apply</span></code>.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please remove the stylesheet from the <cite>Form</cite> after you are done with <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code> - it is <strong>not</strong> advised to leave it in there if we use a <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file as this will take precedence over the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file and could cause style issues later on if we’re changing the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file.</p>
+</div>
+<p>Now let’s go back to our label and fix its background:</p>
+<ul class="simple">
+<li><p>Right click on the label widget and choose <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">styleSheet</span></code> from <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code>, from here let’s change the <strong>background-color</strong> and <strong>border-color</strong>:</p></li>
+</ul>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">Pick</span> <span class="pre">Screen</span> <span class="pre">Color</span></code> option and choose the banner color to make it easier:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/pick_screen_color.png"><img alt="../_images/pick_screen_color.png" class="align-center" src="../_images/pick_screen_color.png" style="width: 450.40000000000003px; height: 386.40000000000003px;" /></a>
+</div></blockquote>
+<p>Adjust the size a bit to align with the banner:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/label_background.PNG"><img alt="../_images/label_background.PNG" class="align-center" src="../_images/label_background.PNG" style="width: 261.6px; height: 72.0px;" /></a>
+</div></blockquote>
+<p>One other thing that we could try to simulate is the <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Display</span></code> widget, adding a background color to it, follow the same steps above for this widget and choose a color for the background:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/embeded_stylesheet.PNG"><img alt="../_images/embeded_stylesheet.PNG" class="align-center" src="../_images/embeded_stylesheet.PNG" style="width: 820.8000000000001px; height: 263.2px;" /></a>
+</div></blockquote>
+<p>There are other things you can try to customize here but if you are happy with your screen, let’s get rid of the <code class="docutils literal notranslate"><span class="pre">Form</span></code> stylesheet from the <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code> as we do not need it anymore:</p>
+<ul class="simple">
+<li><p>Go back to the <strong>Form</strong>’s <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">styleSheet</span></code> option, select all that is in there and hit <code class="docutils literal notranslate"><span class="pre">Delete</span></code> on your keyboard.</p></li>
+</ul>
+<p>Open the screen again, and this is what we should have for now:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/finished.PNG"><img alt="../_images/finished.PNG" class="align-center" src="../_images/finished.PNG" style="width: 720.8000000000001px; height: 632.8000000000001px;" /></a>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../contrib/help.html" class="btn btn-neutral float-right" title="Getting Help With PyDM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="convert_existing_edm.html" class="btn btn-neutral float-left" title="Convert an Existing EDM Screen to a PyDM Screen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, mgibbs, hhslepicka.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
