@@ -1,6 +1,6 @@
-************************************************
+*************************************************
 Convert an Existing EDM Screen to a PyDM Screen
-************************************************
+*************************************************
 
 In this section we will go over an existing EDM screen and try to convert it to a PyDM screen.
 
