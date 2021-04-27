@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>visibilityPV &mdash; EDM to PyDM Migration Guide 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Start with Qt Designer" href="../example-walk-through/start_with_qdesigner.html" />
+    <link rel="prev" title="colorPV" href="colorPV.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> EDM to PyDM Migration Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="colorPV.html">colorPV</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">visibilityPV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#guide">Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Example Run Non-Layout Mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../example-walk-through/start_with_qdesigner.html">Start with Qt Designer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example-walk-through/convert_existing_edm.html">Convert an Existing EDM Screen to a PyDM Screen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example-walk-through/stylesheets.html">Touch Up and Stylesheets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/help.html">Getting Help With PyDM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/requests.html">Bug and Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab/pydm">PyDM GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/slaclab">SLAC-wide GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://controlssoftware.sns.ornl.gov/edm">EDM Website</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">EDM to PyDM Migration Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>visibilityPV</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/how-to/visibilityPV.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visibilitypv">
+<h1>visibilityPV<a class="headerlink" href="#visibilitypv" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="guide">
+<h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
+<p>With EDM the <cite>visibilityPV</cite> property is often used to control the whether or
+not a widget is visible.
+PyDM widgets do not have a specific property for a visibility controlled by a Channel.
+Instead, PyDM offers a more powerful capability called <code class="docutils literal notranslate"><span class="pre">Rules</span></code> in which one or more
+PVs can be used along with an <code class="docutils literal notranslate"><span class="pre">expression</span></code> to control certain properties at widgets.</p>
+<p>For now, most PyDM widgets allow users to control the following properties via Rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Enable</p></li>
+<li><p>Visible</p></li>
+<li><p>Opacity</p></li>
+<li><p>Position - X*</p></li>
+<li><p>Position - Y*</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Properties marked with * may not be available at all widgets.</p>
+</div>
+<p>Some widgets offer more properties than others due to the significance of the
+property to the widget and whether or not it makes sense to allow dynamic modification
+of the property via an expression which depends of one or more <code class="docutils literal notranslate"><span class="pre">PyDMChannels</span></code>.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>For this screen, we want to control the visibility of a <code class="docutils literal notranslate"><span class="pre">PyDMDrawingCircle</span></code>
+using a PV <code class="docutils literal notranslate"><span class="pre">EDM2PYDM:VIS:CONTROL</span></code>) and make the circle widget visible when
+the PV value is equal to 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example uses an EPICS database with simulated PVs which can be
+downloaded at the end of this page.</p>
+</div>
+<ul>
+<li><p><strong>Step 1.</strong></p>
+<p>Let’s start by opening Qt Designer and creating a new <code class="docutils literal notranslate"><span class="pre">Widget</span></code>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/new_widget.gif"><img alt="../_images/new_widget.gif" src="../_images/new_widget.gif" style="width: 552.0px; height: 340.0px;" /></a>
+</div>
+</li>
+<li><p><strong>Step 2.</strong></p>
+<p>Now that we have our form, let’s go ahead and add the Widgets.</p>
+</li>
+<li><p><strong>Step 2.1</strong></p>
+<p>The first widget that we will add is the PyDMEnumButton that will control our
+PV.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Drag and drop a <code class="docutils literal notranslate"><span class="pre">PyDMEnumButton</span></code> into the form created at <strong>Step 1</strong>.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">channel</span></code> property to <code class="docutils literal notranslate"><span class="pre">ca://EDM2PYDM:VIS:CONTROL</span></code>.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>Step 2.2</strong></p>
+<p>Let’s add the circle drawing widget which will have its visibility controlled
+via the PV.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Drag and drop a <code class="docutils literal notranslate"><span class="pre">PyDMDrawingCircle</span></code> next to the <code class="docutils literal notranslate"><span class="pre">PyDMEnumButton</span></code> added
+at <strong>Step 2.1</strong>.</p></li>
+<li><p>Right-click on the circle widget and select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">rules...</span></code>.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Rule</span></code> button.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Rule</span> <span class="pre">Name</span></code> field to <code class="docutils literal notranslate"><span class="pre">Visibility</span> <span class="pre">Demo</span></code>.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Visible</span></code> at the property drop down menu.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Channel</span></code>.</p></li>
+<li><p>At the table bellow fill the <code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">0</span></code> with: <code class="docutils literal notranslate"><span class="pre">ca://EDM2PYDM:VIS:CONTROL</span></code></p></li>
+<li><p>Leave the <code class="docutils literal notranslate"><span class="pre">trigger</span></code> checkbox marked as we want the rule to be calculated
+every time the Channel value changes.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">expression</span></code> field to: <code class="docutils literal notranslate"><span class="pre">ch[0]</span> <span class="pre">==</span> <span class="pre">1</span></code>.</p></li>
+<li><p>Click Save.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>Step 3.</strong></p>
+<p>Save your file (suggested name as <code class="docutils literal notranslate"><span class="pre">visibilityPV.ui</span></code>) and test the example above.</p>
+<p>In one terminal run the example EPICS database:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>softIoc -d visibilityPV.db
+</pre></div>
+</div>
+<p>In another terminal run the example Display:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pydm visibilityPV.ui
+</pre></div>
+</div>
+<p>Once you click at the button and switch from Visible to Invisible you will
+notice that the circle disappears.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/visibilityPV.gif"><img alt="../_images/visibilityPV.gif" src="../_images/visibilityPV.gif" style="width: 640.0px; height: 590.0px;" /></a>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can download the UI file using <a class="reference download internal" download="" href="../_downloads/bf94eba67dc19c8a1b2749bf47ff5bc4/visibilityPV.ui"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">link</span></code></a>
+and the EPICS db file using <a class="reference download internal" download="" href="../_downloads/d68fac05985512acd1128be60297cc75/visibilityPV.db"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">other</span> <span class="pre">link</span></code></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../example-walk-through/start_with_qdesigner.html" class="btn btn-neutral float-right" title="Start with Qt Designer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="colorPV.html" class="btn btn-neutral float-left" title="colorPV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, mgibbs, hhslepicka.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
