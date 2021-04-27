@@ -36,7 +36,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       # Generate Documentation
     - name: Generate Documentation
-      # if: github.ref == 'refs/heads/documentation' 
+      if: github.ref == 'refs/heads/documentation' 
       run: |
         echo "Building docs"
         set -e
@@ -46,6 +46,7 @@ jobs:
         popd
     # Deploy Documentation
     - name: Deploy
+      if: github.ref == 'refs/heads/documentation'
       uses: peaceiris/actions-gh-pages@v3
       with:
        github_token: ${{ secrets.GITHUB_TOKEN }}
