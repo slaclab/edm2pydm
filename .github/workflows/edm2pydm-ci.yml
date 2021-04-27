@@ -11,37 +11,37 @@ on:
     
 jobs:
   deploy:
-  if: ${{ github.repository == 'slaclab/edm2pydm' }}
-  # The type of runner that the job will run on
-  runs-on: ${{ matrix.os }}
-  strategy:
-    matrix:
-      os: [ubuntu-latest]
-      python-version: [3.7]
-  steps:
-    - uses: actions/checkout@v2
+    if: ${{ github.repository == 'slaclab/edm2pydm' }}
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.7]
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: |
-       sudo apt install python3-testresources
-       pip install -U setuptools wheel
-       pip install -U -r docs-requirements.txt
+      - name: Install dependencies
+        run: |
+         sudo apt install python3-testresources
+         pip install -U setuptools wheel
+         pip install -U -r docs-requirements.txt
 
-    - name: Generate Documentation
-      run: |
-        echo "Building docs"
-        pushd docs
-        make html
-        popd
+      - name: Generate Documentation
+        run: |
+          echo "Building docs"
+          pushd docs
+          make html
+          popd
 
-    - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags')
-      with:
-       github_token: ${{ secrets.GITHUB_TOKEN }}
-       publish_dir: ./docs/build/html/
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags')
+        with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: ./docs/build/html/
