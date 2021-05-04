@@ -201,7 +201,7 @@ Notice that QT greys out the text when the widgets are not enabled, and in this 
 	
 	
 .. note::
-In this **old-style** stylesheet file I also added a color for the main `Widget` which is a frame, so to distinguish it from other frames I also changed the object's name as did for the banner, however this did not reflect when opening the screen, but reflected in the ``Qt Designer`` so I am assuming this is because the default ``PyDM`` stylesheet takes precedence and we must be defining the style of the main window in there.
+	In this **old-style** stylesheet file I also added a color for the main `Widget` which is a frame, so to distinguish it from other frames I also changed the object's name as did for the banner, however this did not reflect when opening the screen, but reflected in the ``Qt Designer`` so I am assuming this is because the default ``PyDM`` stylesheet takes precedence and we must be defining the style of the main window in there.
 	
 
 * Main Window::
