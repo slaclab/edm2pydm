@@ -136,6 +136,84 @@ There are other things you can try to customize here but if you are happy with y
 
 Open the screen again, and this is what we should have for now:
 
- .. image::  /_static/example-walk-through/pydm/finished.PNG
+ .. image::  /_static/example-walk-through/pydm/final_my_style.PNG
    :scale: 80 %
    :align: center
+   
+   
+   
+	
+************************	
+Old Style 
+************************
+
+Now, some folks at SLAC still prefer the ``EDM`` stylesheet over the default ``PyDM`` stylesheet or any other stylesheets, here is a ``.qss`` file that you can download and use instead of the file above to get the following screen (looks somewhat more similar to the **EDM** screen):
+
+.. important::
+   	Download this ``.qss`` file from :download:`this link </_static/example-walk-through/old_style.qss>`
+   	
+   	
+Now let's try to open our display with this old-stylesheet::
+
+	PYDM_STYLESHEET_INCLUDE_DEFAULT=1 pydm -m "DEV=MY:PV:HERE" --stylesheet old_style.qss mgnt_unit2.ui
+	
+Here is how it will look:
+
+ .. image::  /_static/example-walk-through/pydm/almost_final_old_style.PNG
+   :scale: 80 %
+   :align: center
+   
+   
+Notice that QT greys out the text when the widgets are not enabled, and in this case it is hard to see the text because we used a grey color for the background. To fix that we'll have to add some additional things to the ``stylesheet`` file to say that we want the color to be black (or other color) when they are disabled:
+
+
+* widgets when ``Disabled`` (might not need all of these)::
+
+	QPushButton:disabled{
+    		color: black;
+	}
+	PyDMLable:disabled {
+    		color: black;
+	}
+	QLineEdit:disabled {
+    		color: black;
+	}
+	PyDMEnumComboBox:disabled {
+    		color: black;
+	}
+	PyDMEnumButton:disabled {
+    		color: black;
+	}
+	PyDMSlider:disabled {
+    		color: black;
+	}
+	QLabel:disabled {
+		color: black;
+	}
+	QRadioButton:disabled {
+		color: black;
+	}
+
+
+ .. image::  /_static/example-walk-through/pydm/final_old_style.PNG
+   :scale: 80 %
+   :align: center
+	
+	
+.. note::
+In this **old-style** stylesheet file I also added a color for the main `Widget` which is a frame, so to distinguish it from other frames I also changed the object's name as did for the banner, however this did not reflect when opening the screen, but reflected in the ``Qt Designer`` so I am assuming this is because the default ``PyDM`` stylesheet takes precedence and we must be defining the style of the main window in there.
+	
+
+* Main Window::
+
+	QWidget[objectName="main_window"]{
+	background-color: rgb(145, 145, 145);
+	}
+		
+
+.. note::
+	In PyDM when we don't have access to the widgets, we'll get a little circle that indicates that and a little message to tell us that access is denied.
+	
+	
+.. important::
+	The ``.qss`` files here designed specifically for the screen we worked on, if you want to use these ``.qss`` files you might have to add more to the stylesheet for widgets we have not covered.

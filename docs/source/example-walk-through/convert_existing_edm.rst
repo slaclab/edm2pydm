@@ -335,7 +335,7 @@ Let's add a PV:
 		``export PYDM_DESIGNER_ONLINE=1``
 
 
-The banner is done, please note that by default every screen in PyDM will come with similar buttons as in EDM, so there are no widgets for these:
+The banner is done, please note that by default every screen in PyDM will come with similar buttons as in EDM, so there are no widgets for these below, but if we want to add an additional button that will give users more information about the screen, we can add a ``PyDM Related Display`` button and we'll cover how to this later in this walk-through.
 
 .. image::  /_static/example-walk-through/edm/banner_buttons.png
    :scale: 100 %
@@ -358,6 +358,9 @@ Click on ``File`` to get more options and find out more about PyDM:
    :align: center
    
 Please explore the other menu information and options.
+
+.. note:: 
+	The PyDM menu on top of the screens will add some height to the screen.
 
 
 Grouping Things Together
@@ -918,7 +921,6 @@ This will open the following window in ``Edit`` mode, so we can click on each wi
  .. image::  /_static/example-walk-through/edm/open_edl_screen.PNG
    :scale: 70 %
    :align: center
-   
 
 
 PyDM
@@ -946,6 +948,19 @@ Preview:
 
 .. note::
 	Make sure you check the ``openInNewWindow`` option for each button!
+	
+One thing to notice here is that two of the buttons for the ``Related Displays`` have a green border, this was added in ``EDM`` with a simple Rectangle that has a green order and has a PV associated with it. In ``PyDM`` we can add the same with a ``PyDMFrame``, just drag and drop a ``PyDMFrame``, adjust the size, then select the button and bring it **inside** the frame!! - if you already placed the button on the screen you'll have to move it a bit from its location and bring it back so it goes inside the frame - this is important!
+
+
+ .. image::  /_static/example-walk-through/pydm/pydm_frame.PNG
+   :scale: 100 %
+   :align: center
+
+Make sure to check the ``alarmSensitivityBorder`` and add the channel:
+
+ .. image::  /_static/example-walk-through/pydm/alarm_frame.PNG
+   :scale: 100 %
+   :align: center
 	
 	
 Now that we have this file created, let's go back to our main screen and add a ``PyDmEmbeddedDisplay`` widget:
