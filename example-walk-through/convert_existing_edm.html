@@ -191,6 +191,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="stylesheets.html">Touch Up and Stylesheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stylesheets.html#old-style">Old Style</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contributing</span></p>
 <ul>
@@ -465,7 +466,7 @@ Expend the font to make it bold from the font down arrow properties:</p>
 <div><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PYDM_DESIGNER_ONLINE=1</span></code></p>
 </div></blockquote>
 </div>
-<p>The banner is done, please note that by default every screen in PyDM will come with similar buttons as in EDM, so there are no widgets for these:</p>
+<p>The banner is done, please note that by default every screen in PyDM will come with similar buttons as in EDM, so there are no widgets for these below, but if we want to add an additional button that will give users more information about the screen, we can add a <code class="docutils literal notranslate"><span class="pre">PyDM</span> <span class="pre">Related</span> <span class="pre">Display</span></code> button and we’ll cover how to this later in this walk-through.</p>
 <a class="reference internal image-reference" href="../_images/banner_buttons.png"><img alt="../_images/banner_buttons.png" class="align-center" src="../_images/banner_buttons.png" style="width: 1074.0px; height: 80.0px;" /></a>
 <a class="reference internal image-reference" href="../_images/banner_done.PNG"><img alt="../_images/banner_done.PNG" class="align-center" src="../_images/banner_done.PNG" style="width: 914.0px; height: 135.0px;" /></a>
 <p>In PyDM all screens will have this set of menus:</p>
@@ -473,6 +474,10 @@ Expend the font to make it bold from the font down arrow properties:</p>
 <p>Click on <code class="docutils literal notranslate"><span class="pre">File</span></code> to get more options and find out more about PyDM:</p>
 <a class="reference internal image-reference" href="../_images/about_pydm.png"><img alt="../_images/about_pydm.png" class="align-center" src="../_images/about_pydm.png" style="width: 292.0px; height: 225.0px;" /></a>
 <p>Please explore the other menu information and options.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The PyDM menu on top of the screens will add some height to the screen.</p>
+</div>
 </div>
 </div>
 <div class="section" id="grouping-things-together">
@@ -882,6 +887,14 @@ Open the displays by clicking on the EDM buttons (from the EDM screen) to see wh
 <p class="admonition-title">Note</p>
 <p>Make sure you check the <code class="docutils literal notranslate"><span class="pre">openInNewWindow</span></code> option for each button!</p>
 </div>
+<p>One thing to notice here is that two of the buttons for the <code class="docutils literal notranslate"><span class="pre">Related</span> <span class="pre">Displays</span></code> have a green border, this was added in <code class="docutils literal notranslate"><span class="pre">EDM</span></code> with a simple Rectangle that has a green order and has a PV associated with it. In <code class="docutils literal notranslate"><span class="pre">PyDM</span></code> we can add the same with a <code class="docutils literal notranslate"><span class="pre">PyDMFrame</span></code>, just drag and drop a <code class="docutils literal notranslate"><span class="pre">PyDMFrame</span></code>, adjust the size, then select the button and bring it <strong>inside</strong> the frame!! - if you already placed the button on the screen you’ll have to move it a bit from its location and bring it back so it goes inside the frame - this is important!</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/pydm_frame.PNG"><img alt="../_images/pydm_frame.PNG" class="align-center" src="../_images/pydm_frame.PNG" style="width: 1008.0px; height: 125.0px;" /></a>
+</div></blockquote>
+<p>Make sure to check the <code class="docutils literal notranslate"><span class="pre">alarmSensitivityBorder</span></code> and add the channel:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/alarm_frame.PNG"><img alt="../_images/alarm_frame.PNG" class="align-center" src="../_images/alarm_frame.PNG" style="width: 512.0px; height: 245.0px;" /></a>
+</div></blockquote>
 <p>Now that we have this file created, let’s go back to our main screen and add a <code class="docutils literal notranslate"><span class="pre">PyDmEmbeddedDisplay</span></code> widget:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/pydm_embeded_display.PNG"><img alt="../_images/pydm_embeded_display.PNG" class="align-center" src="../_images/pydm_embeded_display.PNG" style="width: 876.0px; height: 117.0px;" /></a>

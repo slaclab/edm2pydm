@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#more-about-stylesheets">More about Stylesheets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#old-style">Old Style</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Contributing</span></p>
 <ul>
@@ -309,8 +310,79 @@ There are also free downloadable <code class="docutils literal notranslate"><spa
 </ul>
 <p>Open the screen again, and this is what we should have for now:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/finished.PNG"><img alt="../_images/finished.PNG" class="align-center" src="../_images/finished.PNG" style="width: 720.8000000000001px; height: 632.8000000000001px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/final_my_style.PNG"><img alt="../_images/final_my_style.PNG" class="align-center" src="../_images/final_my_style.PNG" style="width: 730.4000000000001px; height: 645.6px;" /></a>
 </div></blockquote>
+</div>
+</div>
+<div class="section" id="old-style">
+<h1>Old Style<a class="headerlink" href="#old-style" title="Permalink to this headline">¶</a></h1>
+<p>Now, some folks at SLAC still prefer the <code class="docutils literal notranslate"><span class="pre">EDM</span></code> stylesheet over the default <code class="docutils literal notranslate"><span class="pre">PyDM</span></code> stylesheet or any other stylesheets, here is a <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file that you can download and use instead of the file above to get the following screen (looks somewhat more similar to the <strong>EDM</strong> screen):</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Download this <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file from <a class="reference download internal" download="" href="../_downloads/86ab1d554d5ff98c841dfa7cd3949d5c/old_style.qss"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">link</span></code></a></p>
+</div>
+<p>Now let’s try to open our display with this old-stylesheet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYDM_STYLESHEET_INCLUDE_DEFAULT</span><span class="o">=</span><span class="mi">1</span> <span class="n">pydm</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;DEV=MY:PV:HERE&quot;</span> <span class="o">--</span><span class="n">stylesheet</span> <span class="n">old_style</span><span class="o">.</span><span class="n">qss</span> <span class="n">mgnt_unit2</span><span class="o">.</span><span class="n">ui</span>
+</pre></div>
+</div>
+<p>Here is how it will look:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/almost_final_old_style.PNG"><img alt="../_images/almost_final_old_style.PNG" class="align-center" src="../_images/almost_final_old_style.PNG" style="width: 724.0px; height: 645.6px;" /></a>
+</div></blockquote>
+<p>Notice that QT greys out the text when the widgets are not enabled, and in this case it is hard to see the text because we used a grey color for the background. To fix that we’ll have to add some additional things to the <code class="docutils literal notranslate"><span class="pre">stylesheet</span></code> file to say that we want the color to be black (or other color) when they are disabled:</p>
+<ul>
+<li><p>widgets when <code class="docutils literal notranslate"><span class="pre">Disabled</span></code> (might not need all of these):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QPushButton</span><span class="p">:</span><span class="n">disabled</span><span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">PyDMLable</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">QLineEdit</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">PyDMEnumComboBox</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">PyDMEnumButton</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">PyDMSlider</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">QLabel</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">QRadioButton</span><span class="p">:</span><span class="n">disabled</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/final_old_style.PNG"><img alt="../_images/final_old_style.PNG" class="align-center" src="../_images/final_old_style.PNG" style="width: 726.4000000000001px; height: 648.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this <strong>old-style</strong> stylesheet file I also added a color for the main <cite>Widget</cite> which is a frame, so to distinguish it from other frames I also changed the object’s name as did for the banner, however this did not reflect when opening the screen, but reflected in the <code class="docutils literal notranslate"><span class="pre">Qt</span> <span class="pre">Designer</span></code> so I am assuming this is because the default <code class="docutils literal notranslate"><span class="pre">PyDM</span></code> stylesheet takes precedence and we must be defining the style of the main window in there.</p>
+</div>
+<ul>
+<li><p>Main Window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QWidget</span><span class="p">[</span><span class="n">objectName</span><span class="o">=</span><span class="s2">&quot;main_window&quot;</span><span class="p">]{</span>
+<span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">145</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="mi">145</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In PyDM when we don’t have access to the widgets, we’ll get a little circle that indicates that and a little message to tell us that access is denied.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.qss</span></code> files here designed specifically for the screen we worked on, if you want to use these <code class="docutils literal notranslate"><span class="pre">.qss</span></code> files you might have to add more to the stylesheet for widgets we have not covered.</p>
 </div>
 </div>
 
