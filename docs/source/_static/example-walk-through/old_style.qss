@@ -101,4 +101,6 @@ QRadioButton:disabled {
 	color: black;
 }
 
-
+* {
+	font: 9pt "Helvetica";
+}
