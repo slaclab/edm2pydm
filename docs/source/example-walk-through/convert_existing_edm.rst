@@ -897,7 +897,13 @@ Add the rule by right clicking and choosing Edit Rule:
  .. image::  /_static/example-walk-through/pydm/radio_button_add_rule.png
    :scale: 100 %
    :align: center
+   
+.. note:: For the labels where the text does not fit on one line, I had to check the ``wordWrap`` property option.
 
+
+ .. image::  /_static/example-walk-through/pydm/word_wrap.PNG
+   :scale: 60 %
+   :align: center
 
 Embeded Display
 ###############

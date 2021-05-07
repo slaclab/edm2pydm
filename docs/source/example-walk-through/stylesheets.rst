@@ -195,7 +195,7 @@ Notice that QT greys out the text when the widgets are not enabled, and in this 
 	}
 
 
- .. image::  /_static/example-walk-through/pydm/final_old_style.PNG
+ .. image::  /_static/example-walk-through/pydm/last_one.PNG
    :scale: 80 %
    :align: center
 	
@@ -214,6 +214,33 @@ Notice that QT greys out the text when the widgets are not enabled, and in this 
 .. note::
 	In PyDM when we don't have access to the widgets, we'll get a little circle that indicates that and a little message to tell us that access is denied.
 	
+
+.. note::
+	If we want to change the font for the entire application, one easy way to do that is to add the it in the stylesheet, for example if we want font *Helvetica* and font-size *9* we could add something like this:
+	
+* Font::
+
+	* {
+	  font: 9pt "Helvetica";
+	}
+	
+After I added this font to the stylesheet, I had to go back in QtDesigner and add a line to the stylesheet for the bold labels, so that it takes precedence over the one in the ``.qss`` file:
+
+Select all of the bold labels, and on the right side in the properties area add the following::
+
+	font-weight: bold;
+	
+Just like in this immage:
+
+ .. image::  /_static/example-walk-through/pydm/font_stylesheet.PNG
+   :scale: 80 %
+   :align: center
+   
+Make sure to include the additional stylesheet properties for the label in the label in the banner:
+
+ .. image::  /_static/example-walk-through/pydm/label_font_stylesheet.PNG
+   :scale: 80 %
+   :align: center
 	
 .. important::
 	The ``.qss`` files here designed specifically for the screen we worked on, if you want to use these ``.qss`` files you might have to add more to the stylesheet for widgets we have not covered.
