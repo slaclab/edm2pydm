@@ -361,7 +361,7 @@ There are also free downloadable <code class="docutils literal notranslate"><spa
 </li>
 </ul>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/final_old_style.PNG"><img alt="../_images/final_old_style.PNG" class="align-center" src="../_images/final_old_style.PNG" style="width: 726.4000000000001px; height: 648.0px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/last_one.PNG"><img alt="../_images/last_one.PNG" class="align-center" src="../_images/last_one.PNG" style="width: 728.8000000000001px; height: 646.4000000000001px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -380,6 +380,32 @@ There are also free downloadable <code class="docutils literal notranslate"><spa
 <p class="admonition-title">Note</p>
 <p>In PyDM when we don’t have access to the widgets, we’ll get a little circle that indicates that and a little message to tell us that access is denied.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we want to change the font for the entire application, one easy way to do that is to add the it in the stylesheet, for example if we want font <em>Helvetica</em> and font-size <em>9</em> we could add something like this:</p>
+</div>
+<ul>
+<li><p>Font:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="p">{</span>
+  <span class="n">font</span><span class="p">:</span> <span class="mi">9</span><span class="n">pt</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>After I added this font to the stylesheet, I had to go back in QtDesigner and add a line to the stylesheet for the bold labels, so that it takes precedence over the one in the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file:</p>
+<p>Select all of the bold labels, and on the right side in the properties area add the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">font</span><span class="o">-</span><span class="n">weight</span><span class="p">:</span> <span class="n">bold</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Just like in this immage:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/font_stylesheet.PNG"><img alt="../_images/font_stylesheet.PNG" class="align-center" src="../_images/font_stylesheet.PNG" style="width: 356.0px; height: 149.6px;" /></a>
+</div></blockquote>
+<p>Make sure to include the additional stylesheet properties for the label in the label in the banner:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/label_font_stylesheet.PNG"><img alt="../_images/label_font_stylesheet.PNG" class="align-center" src="../_images/label_font_stylesheet.PNG" style="width: 615.2px; height: 157.60000000000002px;" /></a>
+</div></blockquote>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.qss</span></code> files here designed specifically for the screen we worked on, if you want to use these <code class="docutils literal notranslate"><span class="pre">.qss</span></code> files you might have to add more to the stylesheet for widgets we have not covered.</p>
