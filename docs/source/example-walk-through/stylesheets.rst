@@ -209,7 +209,47 @@ Notice that QT greys out the text when the widgets are not enabled, and in this 
 	QWidget[objectName="main_window"]{
 	background-color: rgb(145, 145, 145);
 	}
-		
+
+	
+A workaround for this: in designer, add a top-level QWidget that acts as a container for your whole display. Then, apply the stylesheet to that. So the hierarchy is like ``QWidget``->``QWidget``->Everything in your display.
+
+Adding that additional ``QWidget`` seems to prevent the default stylesheet from clobbering your local styles, without preventing the defaults from working.
+
+If you already have your scree completed, like we have here, we can simply create a new screen:
+
+* Go to File->New
+* Change the dimentions to match the completed screen dimentions
+* Add a ``QWidget`` and expand it to the entire new screen
+* Go back to the completed scree and select all widgets with ``Ctrl+a``, copy them: ``Ctrl+c``
+* Paste the copy widgets in the new screen that contains the ``QWidget`` as base with ``Ctrl+v`` and while they are selected, drag them in proper location, as the pictures below show.
+
+
+Add a ``QWidget`` and expand it to fill the new screen:
+
+ .. image::  /_static/example-walk-through/pydm/qwidget.png
+   :scale: 80 %
+   :align: center
+
+Copy and paste all the widgets into the new one, all at once:
+
+ .. image::  /_static/example-walk-through/pydm/widget_under.PNG
+   :scale: 60 %
+   :align: center
+   
+   
+Make sure to add a new property in the stylesheet for the new widget, for example I left the widget with its default name and added this in the ``.qss`` file::
+
+	QWidget[objectName="widget"]{
+		background-color: rgb(145, 145, 145);
+	}
+
+
+Now the screen should have a darker grey background:
+
+ .. image::  /_static/example-walk-through/pydm/grey_background.PNG
+   :scale: 60 %
+   :align: center
+
 
 .. note::
 	In PyDM when we don't have access to the widgets, we'll get a little circle that indicates that and a little message to tell us that access is denied.
