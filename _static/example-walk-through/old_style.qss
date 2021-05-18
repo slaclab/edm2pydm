@@ -7,11 +7,15 @@ QFrame[objectName="banner_top"]{
 	border-color: rgb(156, 176, 175);
 }
 
+QWidget[objectName="widget"]{
+	background-color: rgb(145, 145, 145);
+}
+
 QPushButton {
 	background-color: rgb(187, 187, 187);
     	border-style: outset;
     	border-width: 1px 2px 2px 1px;
-	border-color:  rgb(226, 226, 226)  rgb(90, 90, 90) rgb(90, 90, 90) rgb(226, 226, 226);
+	border-color:  rgb(226, 226, 226) rgb(90, 90, 90) rgb(90, 90, 90) rgb(226, 226, 226);
 	border-radius: 1px;
 }
 QPushButton:pressed {
@@ -35,7 +39,7 @@ PyDMLabel {
 
 QLineEdit {
     	background-color: rgb(187, 187, 187);
-    	border-color: rgb(101, 101, 101) rgb(226, 226, 226)  rgb(226, 226, 226)  rgb(101, 101, 101);
+    	border-color: rgb(101, 101, 101) rgb(226, 226, 226) rgb(226, 226, 226)  rgb(101, 101, 101);
    	border-style: inset;
     	border-width: 2px 2px 2px 2px;
     	border-radius: 1px;
@@ -55,12 +59,16 @@ QGroupBox::title {
     	background-color: rgb(200, 200, 200);
 }
 
+PyDMSlider:indicator {
+	background-color: black;
+}
+
 
 PyDMEnumComboBox {
   	background-color: rgb(187, 187, 187);
     	border-style: outset;
     	border-width: 1px 2px 2px 1px;
-	border-color:  rgb(226, 226, 226)  rgb(90, 90, 90) rgb(90, 90, 90) rgb(226, 226, 226);
+	border-color:  rgb(226, 226, 226) rgb(90, 90, 90) rgb(90, 90, 90) rgb(226, 226, 226);
 	border-radius: 1px;
 }
 PyDMEnumComboBox:pressed {
@@ -69,10 +77,6 @@ PyDMEnumComboBox:pressed {
 }
 PyDMEnumComboBox:hover {
 	background-color:rgb(240, 240, 240)
-}
-PyDMEnumComboBox:checked{
-	background-color: rgb(199, 199, 199);
-	border: 2px inset  rgb(156, 156, 156);
 }
 
 

@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -376,6 +379,34 @@ There are also free downloadable <code class="docutils literal notranslate"><spa
 </div>
 </li>
 </ul>
+<p>A workaround for this: in designer, add a top-level QWidget that acts as a container for your whole display. Then, apply the stylesheet to that. So the hierarchy is like <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> -&gt; Everything in your display.</p>
+<p>Adding that additional <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> seems to prevent the default stylesheet from clobbering your local styles, without preventing the defaults from working.</p>
+<p>If you already have your scree completed, like we have here, we can simply create a new screen:</p>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span></code></p></li>
+<li><p>Change the dimentions to match the completed screen dimentions</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> and expand it to the entire new screen</p></li>
+<li><p>Go back to the completed scree and select all widgets with <code class="docutils literal notranslate"><span class="pre">Ctrl+a</span></code>, copy them: <code class="docutils literal notranslate"><span class="pre">Ctrl+c</span></code></p></li>
+<li><p>Paste the copy widgets in the new screen that contains the <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> as base with <code class="docutils literal notranslate"><span class="pre">Ctrl+v</span></code> and while they are selected, drag them in proper location, as the pictures below show.</p></li>
+</ul>
+<p>Add a <code class="docutils literal notranslate"><span class="pre">QWidget</span></code> and expand it to fill the new screen:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/qwidget.png"><img alt="../_images/qwidget.png" class="align-center" src="../_images/qwidget.png" style="width: 255.20000000000002px; height: 276.0px;" /></a>
+</div></blockquote>
+<p>Copy and paste all the widgets into the new one, all at once:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/widget_under.PNG"><img alt="../_images/widget_under.PNG" class="align-center" src="../_images/widget_under.PNG" style="width: 778.1999999999999px; height: 520.1999999999999px;" /></a>
+</div></blockquote>
+<p>Make sure to add a new property in the stylesheet for the new widget, for example I left the widget with its default name and added this in the <code class="docutils literal notranslate"><span class="pre">.qss</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QWidget</span><span class="p">[</span><span class="n">objectName</span><span class="o">=</span><span class="s2">&quot;widget&quot;</span><span class="p">]{</span>
+        <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">145</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="mi">145</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now the screen should have a darker grey background:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/grey_background.PNG"><img alt="../_images/grey_background.PNG" class="align-center" src="../_images/grey_background.PNG" style="width: 547.1999999999999px; height: 485.4px;" /></a>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In PyDM when we don’t have access to the widgets, we’ll get a little circle that indicates that and a little message to tell us that access is denied.</p>
