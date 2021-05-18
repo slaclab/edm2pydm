@@ -211,13 +211,13 @@ Notice that QT greys out the text when the widgets are not enabled, and in this 
 	}
 
 	
-A workaround for this: in designer, add a top-level QWidget that acts as a container for your whole display. Then, apply the stylesheet to that. So the hierarchy is like ``QWidget``->``QWidget``->Everything in your display.
+A workaround for this: in designer, add a top-level QWidget that acts as a container for your whole display. Then, apply the stylesheet to that. So the hierarchy is like ``QWidget`` -> ``QWidget`` -> Everything in your display.
 
 Adding that additional ``QWidget`` seems to prevent the default stylesheet from clobbering your local styles, without preventing the defaults from working.
 
 If you already have your scree completed, like we have here, we can simply create a new screen:
 
-* Go to File->New
+* Go to ``File`` -> ``New``
 * Change the dimentions to match the completed screen dimentions
 * Add a ``QWidget`` and expand it to the entire new screen
 * Go back to the completed scree and select all widgets with ``Ctrl+a``, copy them: ``Ctrl+c``
