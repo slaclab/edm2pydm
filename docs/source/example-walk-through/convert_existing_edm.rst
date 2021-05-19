@@ -839,6 +839,42 @@ We can also take a different approach here, and instead of creating three boxes,
    :align: center
 
 
+Visibility Frame 
+################
+EDM
+***
+
+Note that we have a **Group Box** in EDM that has a rule for visibililty:
+
+ .. image::  /_static/example-walk-through/edm/edm_visibility_frame.png
+   :scale: 100 %
+   :align: center
+
+PyDM
+****
+
+We can acomplish the same thing with PyDM by using a ``PyDMFrame``:
+
+Drag and drop a ``PyDMFrame``:
+
+ .. image::  /_static/example-walk-through/pydm/visibillity_frame.png
+   :scale: 100 %
+   :align: center
+
+Add the rule:
+
+ .. image::  /_static/example-walk-through/pydm/visibility_rule.png
+   :scale: 100 %
+   :align: center
+
+And then start placing the Labels and Radio Buttons in the frame:
+
+
+ .. image::  /_static/example-walk-through/pydm/place_in_frame.png
+   :scale: 100 %
+   :align: center
+
+
 Radio Button 
 ############
 EDM
