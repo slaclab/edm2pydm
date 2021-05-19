@@ -181,14 +181,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#id22">PyDM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#radio-button">Radio Button</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#visibility-frame">Visibility Frame</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id23">EDM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id24">PyDM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#embeded-display">Embeded Display</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#radio-button">Radio Button</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id25">EDM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id26">PyDM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#embeded-display">Embeded Display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id27">EDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">PyDM</a></li>
 </ul>
 </li>
 </ul>
@@ -810,10 +815,36 @@ You can also change the style of these frames by choosing a different <code clas
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="radio-button">
-<h2>Radio Button<a class="headerlink" href="#radio-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="visibility-frame">
+<h2>Visibility Frame<a class="headerlink" href="#visibility-frame" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id23">
 <h3>EDM<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p>Note that we have a <strong>Group Box</strong> in EDM that has a rule for visibililty:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/edm_visibility_frame.png"><img alt="../_images/edm_visibility_frame.png" class="align-center" src="../_images/edm_visibility_frame.png" style="width: 343.0px; height: 311.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id24">
+<h3>PyDM<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>We can acomplish the same thing with PyDM by using a <code class="docutils literal notranslate"><span class="pre">PyDMFrame</span></code>:</p>
+<p>Drag and drop a <code class="docutils literal notranslate"><span class="pre">PyDMFrame</span></code>:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/visibillity_frame.png"><img alt="../_images/visibillity_frame.png" class="align-center" src="../_images/visibillity_frame.png" style="width: 300.0px; height: 249.0px;" /></a>
+</div></blockquote>
+<p>Add the rule:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/visibility_rule.png"><img alt="../_images/visibility_rule.png" class="align-center" src="../_images/visibility_rule.png" style="width: 659.0px; height: 449.0px;" /></a>
+</div></blockquote>
+<p>And then start placing the Labels and Radio Buttons in the frame:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/place_in_frame.png"><img alt="../_images/place_in_frame.png" class="align-center" src="../_images/place_in_frame.png" style="width: 497.0px; height: 266.0px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="radio-button">
+<h2>Radio Button<a class="headerlink" href="#radio-button" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id25">
+<h3>EDM<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <p><strong>Radio Button</strong> in EDM:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/edm_radio_button.png"><img alt="../_images/edm_radio_button.png" class="align-center" src="../_images/edm_radio_button.png" style="width: 198.0px; height: 87.0px;" /></a>
@@ -827,8 +858,8 @@ You can also change the style of these frames by choosing a different <code clas
 <div><a class="reference internal image-reference" href="../_images/radio_box_prop.png"><img alt="../_images/radio_box_prop.png" class="align-center" src="../_images/radio_box_prop.png" style="width: 298.0px; height: 359.0px;" /></a>
 </div></blockquote>
 </div>
-<div class="section" id="id24">
-<h3>PyDM<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h3>PyDM<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <p>In PyDM we will use a <code class="docutils literal notranslate"><span class="pre">PyDMEnumButton</span></code> for this widget as well:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/enum_button.PNG"><img alt="../_images/enum_button.PNG" class="align-center" src="../_images/enum_button.PNG" style="width: 687.0px; height: 417.0px;" /></a>
@@ -859,8 +890,8 @@ Select all radio button widgets that will have the rule. You can select them wit
 </div>
 <div class="section" id="embeded-display">
 <h2>Embeded Display<a class="headerlink" href="#embeded-display" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id25">
-<h3>EDM<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3>EDM<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <p>The last portion on this screen that we have not covered yet is the <code class="docutils literal notranslate"><span class="pre">Embedded</span> <span class="pre">Display</span></code>, looking at the properties, we see that this embedded display is opening a file highlighted below:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/embeded_widndow.PNG"><img alt="../_images/embeded_widndow.PNG" class="align-center" src="../_images/embeded_widndow.PNG" style="width: 506.0px; height: 756.0px;" /></a>
@@ -875,8 +906,8 @@ Select all radio button widgets that will have the rule. You can select them wit
 <div><a class="reference internal image-reference" href="../_images/open_edl_screen.PNG"><img alt="../_images/open_edl_screen.PNG" class="align-center" src="../_images/open_edl_screen.PNG" style="width: 1116.5px; height: 207.89999999999998px;" /></a>
 </div></blockquote>
 </div>
-<div class="section" id="id26">
-<h3>PyDM<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id28">
+<h3>PyDM<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">PyDM</span></code> we’ll have to create that file first. Go to <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span></code> and create a new <code class="docutils literal notranslate"><span class="pre">Widget</span></code>, set the width and height to correspond to the ones seen in the EDM Embedded Display properties.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/new_file.PNG"><img alt="../_images/new_file.PNG" class="align-center" src="../_images/new_file.PNG" style="width: 900.9px; height: 132.29999999999998px;" /></a>
