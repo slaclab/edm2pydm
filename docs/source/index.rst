@@ -39,6 +39,7 @@ tasks, and data plugins for multiple control systems.
     example-walk-through/start_with_qdesigner.rst
     example-walk-through/convert_existing_edm.rst
     example-walk-through/stylesheets.rst
+    example-walk-through/video_tutorial.rst
 
 .. toctree::
    :maxdepth: 1
